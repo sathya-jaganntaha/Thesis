@@ -1,0 +1,28 @@
+## Where the samples will be written
+save_data: data/en-hi/
+## Where the vocab(s) will be written
+src_vocab: data/models/spm_model.bpe.en.hi.vocab
+share_vocab: true
+# Corpus opts:
+data:
+    corpus_0:
+        path_src: data/en-hi/train.hi
+        path_tgt: data/en-hi/train.en
+        transforms: [sentencepiece]
+    valid:
+        path_src: data/en-hi/val.hi
+        path_tgt: data/en-hi/val.hi
+        transforms: [sentencepiece]
+
+### Transform related opts:
+#### Subword
+src_subword_model: data/models/spm_model.bpe.en.hi.model
+src_subword_nbest: 1
+src_subword_alpha: 0.0
+#### Filter
+src_seq_length: 150
+tgt_seq_length: 150
+
+# silently ignore empty lines in the data
+skip_empty_level: silent
+n_sample: -1

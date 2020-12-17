@@ -1,0 +1,66 @@
+data:
+    corpus_0:
+        path_src: data/ta-kn/trainspm.ta
+        path_tgt: data/ta-kn/trainspm.kn
+        #transforms: [sentencepiece]
+    valid:
+        path_src: data/ta-kn/valspm.ta
+        path_tgt: data/ta-kn/valspm.kn
+        #transforms: [sentencepiece]
+
+
+log_file: data/ta-kn/log_rnn
+tensorboard: true
+tensorboard_log_dir: data/ta-kn/tensorboard_ta_kn
+### Transform related opts:
+#### Subword
+share_vocab: true
+src_vocab: data/models/spm_model.bpe.ta.kn.vocab
+
+#### Filter
+src_seq_length: 200
+tgt_seq_length: 200
+train_from: /content/drive/MyDrive/SATHYA-NMT/data/models/ta2knrnn_step_48000.pt
+# silently ignore empty lines in the data
+skip_empty_level: silent
+save_model: data/models/ta2knrnn
+keep_checkpoint: 50
+save_checkpoint_steps: 2000
+average_decay: 0.0005
+seed: 1234
+report_every: 100
+train_steps: 51000
+valid_steps: 51000
+early_stopping: 10
+early_stopping_criteria: "ppl"
+# Batching
+queue_size: 10000
+bucket_size: 32768
+world_size: 1
+gpu_ranks: [0]
+batch_type: "tokens"
+batch_size: 1000
+valid_batch_size: 16
+batch_size_multiple: 1
+#max_generator_batches: 0
+# Optimization
+model_dtype: "fp32"
+optim: "adam"
+learning_rate: 0.0005
+label_smoothing: 0.2
+param_init: 0
+param_init_glorot: true
+normalization: "tokens"
+# Model
+encoder_type: brnn
+decoder_type: rnn
+enc_layers: 1
+dec_layers: 1
+rnn_size: 1024
+word_vec_size: 1024
+dropout_steps: [0]
+dropout: [0.3]
+#global_attention: mlp
+#attention_dropout: [0.1]
+share_decoder_embeddings: true
+share_embeddings: true

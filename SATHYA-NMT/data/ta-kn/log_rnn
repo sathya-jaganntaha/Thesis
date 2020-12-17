@@ -1,0 +1,1267 @@
+[2020-12-09 07:01:55,992 INFO] Missing transforms field for corpus_0 data, set to default: [].
+[2020-12-09 07:01:55,993 WARNING] Corpus corpus_0's weight should be given. We default it to 1 for you.
+[2020-12-09 07:01:55,994 INFO] Missing transforms field for valid data, set to default: [].
+[2020-12-09 07:01:55,994 INFO] Parsed 2 corpora from -data.
+[2020-12-09 07:01:55,995 INFO] Get special vocabs from Transforms: {'src': set(), 'tgt': set()}.
+[2020-12-09 07:01:55,995 INFO] Loading vocab from text file...
+[2020-12-09 07:01:55,995 INFO] Loading src vocabulary from data/models/spm_model.bpe.ta.kn.vocab
+[2020-12-09 07:01:56,000 INFO] Loaded src vocab has 2145 tokens.
+[2020-12-09 07:01:56,001 INFO] Sharing src vocab to tgt...
+[2020-12-09 07:01:56,002 INFO] Building fields with vocab in counters...
+[2020-12-09 07:01:56,004 INFO]  * tgt vocab size: 2149.
+[2020-12-09 07:01:56,007 INFO]  * src vocab size: 2147.
+[2020-12-09 07:01:56,007 INFO]  * merging src and tgt vocab...
+[2020-12-09 07:01:56,011 INFO]  * merged vocab size: 2149.
+[2020-12-09 07:01:56,011 INFO]  * src vocab size = 2149
+[2020-12-09 07:01:56,011 INFO]  * tgt vocab size = 2149
+[2020-12-09 07:01:56,014 INFO] Building model...
+[2020-12-09 07:02:00,686 INFO] NMTModel(
+  (encoder): RNNEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(2149, 1024, padding_idx=1)
+        )
+      )
+    )
+    (rnn): LSTM(1024, 512, dropout=0.3, bidirectional=True)
+  )
+  (decoder): InputFeedRNNDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(2149, 1024, padding_idx=1)
+        )
+      )
+    )
+    (dropout): Dropout(p=0.3, inplace=False)
+    (rnn): StackedLSTM(
+      (dropout): Dropout(p=0.3, inplace=False)
+      (layers): ModuleList(
+        (0): LSTMCell(2048, 1024)
+      )
+    )
+    (attn): GlobalAttention(
+      (linear_in): Linear(in_features=1024, out_features=1024, bias=False)
+      (linear_out): Linear(in_features=2048, out_features=1024, bias=False)
+    )
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=1024, out_features=2149, bias=True)
+    (1): Cast()
+    (2): LogSoftmax(dim=-1)
+  )
+)
+[2020-12-09 07:02:00,686 INFO] encoder: 8500224
+[2020-12-09 07:02:00,687 INFO] decoder: 15738981
+[2020-12-09 07:02:00,687 INFO] * number of parameters: 24239205
+[2020-12-09 07:02:02,377 INFO] Starting training on GPU: [0]
+[2020-12-09 07:02:02,377 INFO] Start training loop and validate every 2000 steps...
+[2020-12-09 07:02:02,378 INFO] corpus_0's transforms: TransformPipe()
+[2020-12-09 07:02:02,380 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:02:31,512 INFO] Step 100/50000; acc:   9.00; ppl: 119.04; xent: 4.78; lr: 0.00050; 3619/4291 tok/s;     29 sec
+[2020-12-09 07:02:55,872 INFO] Step 200/50000; acc:  10.81; ppl: 76.82; xent: 4.34; lr: 0.00050; 4448/5199 tok/s;     53 sec
+[2020-12-09 07:04:20,534 INFO] Missing transforms field for corpus_0 data, set to default: [].
+[2020-12-09 07:04:20,536 WARNING] Corpus corpus_0's weight should be given. We default it to 1 for you.
+[2020-12-09 07:04:20,536 INFO] Missing transforms field for valid data, set to default: [].
+[2020-12-09 07:04:20,536 INFO] Parsed 2 corpora from -data.
+[2020-12-09 07:04:20,537 INFO] Get special vocabs from Transforms: {'src': set(), 'tgt': set()}.
+[2020-12-09 07:04:20,537 INFO] Loading vocab from text file...
+[2020-12-09 07:04:20,537 INFO] Loading src vocabulary from data/models/spm_model.bpe.ta.kn.vocab
+[2020-12-09 07:04:20,542 INFO] Loaded src vocab has 2145 tokens.
+[2020-12-09 07:04:20,543 INFO] Sharing src vocab to tgt...
+[2020-12-09 07:04:20,544 INFO] Building fields with vocab in counters...
+[2020-12-09 07:04:20,546 INFO]  * tgt vocab size: 2149.
+[2020-12-09 07:04:20,549 INFO]  * src vocab size: 2147.
+[2020-12-09 07:04:20,549 INFO]  * merging src and tgt vocab...
+[2020-12-09 07:04:20,553 INFO]  * merged vocab size: 2149.
+[2020-12-09 07:04:20,553 INFO]  * src vocab size = 2149
+[2020-12-09 07:04:20,553 INFO]  * tgt vocab size = 2149
+[2020-12-09 07:04:20,557 INFO] Building model...
+[2020-12-09 07:04:25,186 INFO] NMTModel(
+  (encoder): RNNEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(2149, 1024, padding_idx=1)
+        )
+      )
+    )
+    (rnn): LSTM(1024, 512, dropout=0.3, bidirectional=True)
+  )
+  (decoder): InputFeedRNNDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(2149, 1024, padding_idx=1)
+        )
+      )
+    )
+    (dropout): Dropout(p=0.3, inplace=False)
+    (rnn): StackedLSTM(
+      (dropout): Dropout(p=0.3, inplace=False)
+      (layers): ModuleList(
+        (0): LSTMCell(2048, 1024)
+      )
+    )
+    (attn): GlobalAttention(
+      (linear_in): Linear(in_features=1024, out_features=1024, bias=False)
+      (linear_out): Linear(in_features=2048, out_features=1024, bias=False)
+    )
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=1024, out_features=2149, bias=True)
+    (1): Cast()
+    (2): LogSoftmax(dim=-1)
+  )
+)
+[2020-12-09 07:04:25,187 INFO] encoder: 8500224
+[2020-12-09 07:04:25,188 INFO] decoder: 15738981
+[2020-12-09 07:04:25,188 INFO] * number of parameters: 24239205
+[2020-12-09 07:04:26,753 INFO] Starting training on GPU: [0]
+[2020-12-09 07:04:26,753 INFO] Start training loop and validate every 2000 steps...
+[2020-12-09 07:04:26,754 INFO] corpus_0's transforms: TransformPipe()
+[2020-12-09 07:04:26,756 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:04:57,297 INFO] Step 100/50000; acc:   8.94; ppl: 118.25; xent: 4.77; lr: 0.00050; 6811/8009 tok/s;     31 sec
+[2020-12-09 07:05:14,150 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:05:31,191 INFO] Step 200/50000; acc:  10.53; ppl: 76.48; xent: 4.34; lr: 0.00050; 5317/6362 tok/s;     64 sec
+[2020-12-09 07:06:13,169 INFO] Step 300/50000; acc:  13.16; ppl: 49.41; xent: 3.90; lr: 0.00050; 4302/5159 tok/s;    106 sec
+[2020-12-09 07:06:36,973 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:06:52,593 INFO] Step 400/50000; acc:  17.63; ppl: 33.32; xent: 3.51; lr: 0.00050; 4484/5371 tok/s;    146 sec
+[2020-12-09 07:07:39,157 INFO] Step 500/50000; acc:  23.21; ppl: 24.42; xent: 3.20; lr: 0.00050; 3663/4354 tok/s;    192 sec
+[2020-12-09 07:08:06,108 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:08:21,848 INFO] Step 600/50000; acc:  28.61; ppl: 19.08; xent: 2.95; lr: 0.00050; 4327/5160 tok/s;    235 sec
+[2020-12-09 07:09:03,572 INFO] Step 700/50000; acc:  36.24; ppl: 13.80; xent: 2.62; lr: 0.00050; 4315/5235 tok/s;    277 sec
+[2020-12-09 07:09:44,936 INFO] Step 800/50000; acc:  47.92; ppl:  8.64; xent: 2.16; lr: 0.00050; 4598/5334 tok/s;    318 sec
+[2020-12-09 07:10:17,210 INFO] Step 900/50000; acc:  57.80; ppl:  5.75; xent: 1.75; lr: 0.00050; 6202/7395 tok/s;    350 sec
+[2020-12-09 07:10:24,556 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:10:55,334 INFO] Step 1000/50000; acc:  58.92; ppl:  5.83; xent: 1.76; lr: 0.00050; 4860/5879 tok/s;    389 sec
+[2020-12-09 07:11:39,153 INFO] Step 1100/50000; acc:  61.76; ppl:  5.27; xent: 1.66; lr: 0.00050; 4095/4865 tok/s;    432 sec
+[2020-12-09 07:11:44,670 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:12:17,595 INFO] Step 1200/50000; acc:  64.94; ppl:  4.61; xent: 1.53; lr: 0.00050; 4864/5810 tok/s;    471 sec
+[2020-12-09 07:13:03,158 INFO] Step 1300/50000; acc:  66.50; ppl:  4.37; xent: 1.48; lr: 0.00050; 3766/4515 tok/s;    516 sec
+[2020-12-09 07:13:12,199 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:13:44,804 INFO] Step 1400/50000; acc:  71.47; ppl:  3.60; xent: 1.28; lr: 0.00050; 4250/5089 tok/s;    558 sec
+[2020-12-09 07:14:24,935 INFO] Step 1500/50000; acc:  74.48; ppl:  3.24; xent: 1.18; lr: 0.00050; 4316/5123 tok/s;    598 sec
+[2020-12-09 07:15:05,113 INFO] Step 1600/50000; acc:  85.04; ppl:  2.21; xent: 0.79; lr: 0.00050; 4785/5754 tok/s;    638 sec
+[2020-12-09 07:15:32,823 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:15:37,881 INFO] Step 1700/50000; acc:  88.90; ppl:  1.91; xent: 0.65; lr: 0.00050; 6105/7131 tok/s;    671 sec
+[2020-12-09 07:16:16,727 INFO] Step 1800/50000; acc:  79.79; ppl:  2.64; xent: 0.97; lr: 0.00050; 4822/5832 tok/s;    710 sec
+[2020-12-09 07:16:52,505 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:16:59,193 INFO] Step 1900/50000; acc:  80.93; ppl:  2.54; xent: 0.93; lr: 0.00050; 4136/4924 tok/s;    752 sec
+[2020-12-09 07:17:45,267 INFO] Step 2000/50000; acc:  80.90; ppl:  2.52; xent: 0.92; lr: 0.00050; 3760/4509 tok/s;    799 sec
+[2020-12-09 07:17:45,268 INFO] valid's transforms: TransformPipe()
+[2020-12-09 07:17:45,270 INFO] Loading ParallelCorpus(data/ta-kn/valspm.ta, data/ta-kn/valspm.kn, align=None)...
+[2020-12-09 07:23:04,873 INFO] Missing transforms field for corpus_0 data, set to default: [].
+[2020-12-09 07:23:04,875 WARNING] Corpus corpus_0's weight should be given. We default it to 1 for you.
+[2020-12-09 07:23:04,875 INFO] Missing transforms field for valid data, set to default: [].
+[2020-12-09 07:23:04,875 INFO] Parsed 2 corpora from -data.
+[2020-12-09 07:23:04,876 INFO] Get special vocabs from Transforms: {'src': set(), 'tgt': set()}.
+[2020-12-09 07:23:04,876 INFO] Loading vocab from text file...
+[2020-12-09 07:23:04,876 INFO] Loading src vocabulary from data/models/spm_model.bpe.ta.kn.vocab
+[2020-12-09 07:23:04,881 INFO] Loaded src vocab has 2145 tokens.
+[2020-12-09 07:23:04,882 INFO] Sharing src vocab to tgt...
+[2020-12-09 07:23:04,883 INFO] Building fields with vocab in counters...
+[2020-12-09 07:23:04,885 INFO]  * tgt vocab size: 2149.
+[2020-12-09 07:23:04,888 INFO]  * src vocab size: 2147.
+[2020-12-09 07:23:04,888 INFO]  * merging src and tgt vocab...
+[2020-12-09 07:23:04,891 INFO]  * merged vocab size: 2149.
+[2020-12-09 07:23:04,892 INFO]  * src vocab size = 2149
+[2020-12-09 07:23:04,892 INFO]  * tgt vocab size = 2149
+[2020-12-09 07:23:04,895 INFO] Building model...
+[2020-12-09 07:23:09,272 INFO] NMTModel(
+  (encoder): RNNEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(2149, 1024, padding_idx=1)
+        )
+      )
+    )
+    (rnn): LSTM(1024, 512, dropout=0.3, bidirectional=True)
+  )
+  (decoder): InputFeedRNNDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(2149, 1024, padding_idx=1)
+        )
+      )
+    )
+    (dropout): Dropout(p=0.3, inplace=False)
+    (rnn): StackedLSTM(
+      (dropout): Dropout(p=0.3, inplace=False)
+      (layers): ModuleList(
+        (0): LSTMCell(2048, 1024)
+      )
+    )
+    (attn): GlobalAttention(
+      (linear_in): Linear(in_features=1024, out_features=1024, bias=False)
+      (linear_out): Linear(in_features=2048, out_features=1024, bias=False)
+    )
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=1024, out_features=2149, bias=True)
+    (1): Cast()
+    (2): LogSoftmax(dim=-1)
+  )
+)
+[2020-12-09 07:23:09,273 INFO] encoder: 8500224
+[2020-12-09 07:23:09,273 INFO] decoder: 15738981
+[2020-12-09 07:23:09,273 INFO] * number of parameters: 24239205
+[2020-12-09 07:23:10,756 INFO] Starting training on GPU: [0]
+[2020-12-09 07:23:10,756 INFO] Start training loop and validate every 5000 steps...
+[2020-12-09 07:23:10,757 INFO] corpus_0's transforms: TransformPipe()
+[2020-12-09 07:23:10,758 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:23:40,755 INFO] Step 100/50000; acc:   8.94; ppl: 118.25; xent: 4.77; lr: 0.00050; 6934/8154 tok/s;     30 sec
+[2020-12-09 07:23:57,160 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:24:13,963 INFO] Step 200/50000; acc:  10.53; ppl: 76.48; xent: 4.34; lr: 0.00050; 5426/6494 tok/s;     63 sec
+[2020-12-09 07:24:55,270 INFO] Step 300/50000; acc:  13.16; ppl: 49.41; xent: 3.90; lr: 0.00050; 4372/5243 tok/s;    105 sec
+[2020-12-09 07:25:18,702 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:25:34,022 INFO] Step 400/50000; acc:  17.63; ppl: 33.32; xent: 3.51; lr: 0.00050; 4561/5464 tok/s;    143 sec
+[2020-12-09 07:26:19,843 INFO] Step 500/50000; acc:  23.21; ppl: 24.42; xent: 3.20; lr: 0.00050; 3722/4425 tok/s;    189 sec
+[2020-12-09 07:26:46,519 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:27:01,785 INFO] Step 600/50000; acc:  28.61; ppl: 19.08; xent: 2.95; lr: 0.00050; 4405/5252 tok/s;    231 sec
+[2020-12-09 07:27:42,722 INFO] Step 700/50000; acc:  36.24; ppl: 13.80; xent: 2.62; lr: 0.00050; 4398/5336 tok/s;    272 sec
+[2020-12-09 07:28:23,473 INFO] Step 800/50000; acc:  47.92; ppl:  8.64; xent: 2.16; lr: 0.00050; 4667/5415 tok/s;    313 sec
+[2020-12-09 07:28:55,317 INFO] Step 900/50000; acc:  57.80; ppl:  5.75; xent: 1.75; lr: 0.00050; 6286/7494 tok/s;    345 sec
+[2020-12-09 07:29:02,580 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:29:32,793 INFO] Step 1000/50000; acc:  58.92; ppl:  5.83; xent: 1.76; lr: 0.00050; 4944/5980 tok/s;    382 sec
+[2020-12-09 07:30:16,010 INFO] Step 1100/50000; acc:  61.76; ppl:  5.27; xent: 1.66; lr: 0.00050; 4152/4933 tok/s;    425 sec
+[2020-12-09 07:30:21,529 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:30:54,275 INFO] Step 1200/50000; acc:  64.94; ppl:  4.61; xent: 1.53; lr: 0.00050; 4887/5837 tok/s;    464 sec
+[2020-12-09 07:31:39,440 INFO] Step 1300/50000; acc:  66.50; ppl:  4.37; xent: 1.48; lr: 0.00050; 3799/4555 tok/s;    509 sec
+[2020-12-09 07:31:48,514 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:32:20,965 INFO] Step 1400/50000; acc:  71.47; ppl:  3.60; xent: 1.28; lr: 0.00050; 4262/5104 tok/s;    550 sec
+[2020-12-09 07:33:00,796 INFO] Step 1500/50000; acc:  74.48; ppl:  3.24; xent: 1.18; lr: 0.00050; 4349/5162 tok/s;    590 sec
+[2020-12-09 07:33:40,792 INFO] Step 1600/50000; acc:  85.04; ppl:  2.21; xent: 0.79; lr: 0.00050; 4807/5780 tok/s;    630 sec
+[2020-12-09 07:34:08,311 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:34:13,335 INFO] Step 1700/50000; acc:  88.90; ppl:  1.91; xent: 0.65; lr: 0.00050; 6147/7180 tok/s;    663 sec
+[2020-12-09 07:34:52,186 INFO] Step 1800/50000; acc:  79.79; ppl:  2.64; xent: 0.97; lr: 0.00050; 4821/5832 tok/s;    701 sec
+[2020-12-09 07:35:28,117 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:35:34,764 INFO] Step 1900/50000; acc:  80.93; ppl:  2.54; xent: 0.93; lr: 0.00050; 4125/4911 tok/s;    744 sec
+[2020-12-09 07:36:20,574 INFO] Step 2000/50000; acc:  80.90; ppl:  2.52; xent: 0.92; lr: 0.00050; 3781/4535 tok/s;    790 sec
+[2020-12-09 07:36:57,123 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:37:02,905 INFO] Step 2100/50000; acc:  82.32; ppl:  2.39; xent: 0.87; lr: 0.00050; 4102/4868 tok/s;    832 sec
+[2020-12-09 07:37:44,619 INFO] Step 2200/50000; acc:  84.29; ppl:  2.20; xent: 0.79; lr: 0.00050; 4164/5008 tok/s;    874 sec
+[2020-12-09 07:38:30,071 INFO] Step 2300/50000; acc:  84.16; ppl:  2.21; xent: 0.79; lr: 0.00050; 3836/4557 tok/s;    919 sec
+[2020-12-09 07:39:00,419 INFO] Step 2400/50000; acc:  96.30; ppl:  1.45; xent: 0.37; lr: 0.00050; 6820/8118 tok/s;    950 sec
+[2020-12-09 07:39:17,827 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:39:34,275 INFO] Step 2500/50000; acc:  93.09; ppl:  1.59; xent: 0.47; lr: 0.00050; 5352/6354 tok/s;    984 sec
+[2020-12-09 07:40:17,139 INFO] Step 2600/50000; acc:  87.09; ppl:  1.96; xent: 0.67; lr: 0.00050; 4295/5176 tok/s;   1026 sec
+[2020-12-09 07:40:39,249 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:40:59,034 INFO] Step 2700/50000; acc:  87.23; ppl:  1.95; xent: 0.67; lr: 0.00050; 4177/4922 tok/s;   1068 sec
+[2020-12-09 07:41:39,275 INFO] Step 2800/50000; acc:  87.75; ppl:  1.90; xent: 0.64; lr: 0.00050; 4429/5308 tok/s;   1109 sec
+[2020-12-09 07:42:08,076 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:42:25,697 INFO] Step 2900/50000; acc:  88.68; ppl:  1.85; xent: 0.61; lr: 0.00050; 3730/4403 tok/s;   1155 sec
+[2020-12-09 07:43:06,122 INFO] Step 3000/50000; acc:  89.35; ppl:  1.80; xent: 0.59; lr: 0.00050; 4471/5465 tok/s;   1195 sec
+[2020-12-09 07:43:48,344 INFO] Step 3100/50000; acc:  91.74; ppl:  1.66; xent: 0.51; lr: 0.00050; 4146/4864 tok/s;   1238 sec
+[2020-12-09 07:44:21,046 INFO] Step 3200/50000; acc:  97.62; ppl:  1.34; xent: 0.29; lr: 0.00050; 6035/7089 tok/s;   1270 sec
+[2020-12-09 07:44:30,997 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:45:02,828 INFO] Step 3300/50000; acc:  93.45; ppl:  1.53; xent: 0.43; lr: 0.00050; 4390/5209 tok/s;   1312 sec
+[2020-12-09 07:45:41,746 INFO] Step 3400/50000; acc:  90.94; ppl:  1.67; xent: 0.52; lr: 0.00050; 4645/5660 tok/s;   1351 sec
+[2020-12-09 07:45:49,295 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:46:21,691 INFO] Step 3500/50000; acc:  92.05; ppl:  1.62; xent: 0.48; lr: 0.00050; 4649/5560 tok/s;   1391 sec
+[2020-12-09 07:47:04,534 INFO] Step 3600/50000; acc:  91.04; ppl:  1.68; xent: 0.52; lr: 0.00050; 4050/4852 tok/s;   1434 sec
+[2020-12-09 07:47:17,752 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:47:50,314 INFO] Step 3700/50000; acc:  92.42; ppl:  1.61; xent: 0.47; lr: 0.00050; 3640/4324 tok/s;   1480 sec
+[2020-12-09 07:48:32,154 INFO] Step 3800/50000; acc:  92.28; ppl:  1.61; xent: 0.48; lr: 0.00050; 4344/5172 tok/s;   1521 sec
+[2020-12-09 07:49:07,053 INFO] Step 3900/50000; acc:  96.01; ppl:  1.41; xent: 0.34; lr: 0.00050; 5519/6564 tok/s;   1556 sec
+[2020-12-09 07:49:37,478 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:49:39,207 INFO] Step 4000/50000; acc:  97.98; ppl:  1.31; xent: 0.27; lr: 0.00050; 6210/7301 tok/s;   1588 sec
+[2020-12-09 07:50:17,369 INFO] Step 4100/50000; acc:  94.41; ppl:  1.48; xent: 0.39; lr: 0.00050; 4961/5959 tok/s;   1627 sec
+[2020-12-09 07:50:55,924 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:50:59,960 INFO] Step 4200/50000; acc:  93.89; ppl:  1.50; xent: 0.40; lr: 0.00050; 3987/4877 tok/s;   1669 sec
+[2020-12-09 07:51:46,622 INFO] Step 4300/50000; acc:  94.48; ppl:  1.49; xent: 0.40; lr: 0.00050; 3711/4367 tok/s;   1716 sec
+[2020-12-09 07:52:25,220 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:52:27,137 INFO] Step 4400/50000; acc:  94.10; ppl:  1.50; xent: 0.41; lr: 0.00050; 4358/5235 tok/s;   1756 sec
+[2020-12-09 07:53:12,021 INFO] Step 4500/50000; acc:  95.30; ppl:  1.45; xent: 0.37; lr: 0.00050; 3822/4579 tok/s;   1801 sec
+[2020-12-09 07:53:53,570 INFO] Step 4600/50000; acc:  94.76; ppl:  1.46; xent: 0.38; lr: 0.00050; 4332/5144 tok/s;   1843 sec
+[2020-12-09 07:54:27,027 INFO] Step 4700/50000; acc:  98.36; ppl:  1.27; xent: 0.24; lr: 0.00050; 5660/6738 tok/s;   1876 sec
+[2020-12-09 07:54:49,780 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:55:01,431 INFO] Step 4800/50000; acc:  98.02; ppl:  1.28; xent: 0.24; lr: 0.00050; 5637/6604 tok/s;   1911 sec
+[2020-12-09 07:55:39,988 INFO] Step 4900/50000; acc:  96.47; ppl:  1.36; xent: 0.31; lr: 0.00050; 4760/5785 tok/s;   1949 sec
+[2020-12-09 07:56:11,104 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 07:56:23,962 INFO] Step 5000/50000; acc:  96.23; ppl:  1.39; xent: 0.33; lr: 0.00050; 3868/4602 tok/s;   1993 sec
+[2020-12-09 07:56:23,963 INFO] valid's transforms: TransformPipe()
+[2020-12-09 07:56:23,965 INFO] Loading ParallelCorpus(data/ta-kn/valspm.ta, data/ta-kn/valspm.kn, align=None)...
+[2020-12-09 09:17:58,613 INFO] Missing transforms field for corpus_0 data, set to default: [].
+[2020-12-09 09:17:58,767 WARNING] Corpus corpus_0's weight should be given. We default it to 1 for you.
+[2020-12-09 09:17:58,768 INFO] Missing transforms field for valid data, set to default: [].
+[2020-12-09 09:17:58,768 INFO] Parsed 2 corpora from -data.
+[2020-12-09 09:17:58,769 INFO] Get special vocabs from Transforms: {'src': set(), 'tgt': set()}.
+[2020-12-09 09:17:58,769 INFO] Loading vocab from text file...
+[2020-12-09 09:17:58,769 INFO] Loading src vocabulary from data/models/spm_model.bpe.ta.kn.vocab
+[2020-12-09 09:17:58,775 INFO] Loaded src vocab has 2145 tokens.
+[2020-12-09 09:17:58,776 INFO] Sharing src vocab to tgt...
+[2020-12-09 09:17:58,776 INFO] Building fields with vocab in counters...
+[2020-12-09 09:17:58,779 INFO]  * tgt vocab size: 2149.
+[2020-12-09 09:17:58,781 INFO]  * src vocab size: 2147.
+[2020-12-09 09:17:58,781 INFO]  * merging src and tgt vocab...
+[2020-12-09 09:17:58,785 INFO]  * merged vocab size: 2149.
+[2020-12-09 09:17:58,786 INFO]  * src vocab size = 2149
+[2020-12-09 09:17:58,786 INFO]  * tgt vocab size = 2149
+[2020-12-09 09:17:58,789 INFO] Building model...
+[2020-12-09 09:18:03,557 INFO] NMTModel(
+  (encoder): RNNEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(2149, 1024, padding_idx=1)
+        )
+      )
+    )
+    (rnn): LSTM(1024, 512, dropout=0.3, bidirectional=True)
+  )
+  (decoder): InputFeedRNNDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(2149, 1024, padding_idx=1)
+        )
+      )
+    )
+    (dropout): Dropout(p=0.3, inplace=False)
+    (rnn): StackedLSTM(
+      (dropout): Dropout(p=0.3, inplace=False)
+      (layers): ModuleList(
+        (0): LSTMCell(2048, 1024)
+      )
+    )
+    (attn): GlobalAttention(
+      (linear_in): Linear(in_features=1024, out_features=1024, bias=False)
+      (linear_out): Linear(in_features=2048, out_features=1024, bias=False)
+    )
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=1024, out_features=2149, bias=True)
+    (1): Cast()
+    (2): LogSoftmax(dim=-1)
+  )
+)
+[2020-12-09 09:18:03,558 INFO] encoder: 8500224
+[2020-12-09 09:18:03,558 INFO] decoder: 15738981
+[2020-12-09 09:18:03,558 INFO] * number of parameters: 24239205
+[2020-12-09 09:18:05,448 INFO] Starting training on GPU: [0]
+[2020-12-09 09:18:05,448 INFO] Start training loop and validate every 50000 steps...
+[2020-12-09 09:18:05,449 INFO] corpus_0's transforms: TransformPipe()
+[2020-12-09 09:18:05,451 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 09:18:38,831 INFO] Step 100/50000; acc:   8.94; ppl: 118.25; xent: 4.77; lr: 0.00050; 6231/7328 tok/s;     33 sec
+[2020-12-09 09:18:55,235 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 09:19:12,147 INFO] Step 200/50000; acc:  10.53; ppl: 76.48; xent: 4.34; lr: 0.00050; 5409/6473 tok/s;     67 sec
+[2020-12-09 09:19:53,568 INFO] Step 300/50000; acc:  13.16; ppl: 49.41; xent: 3.90; lr: 0.00050; 4360/5228 tok/s;    108 sec
+[2020-12-09 09:20:17,296 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 09:20:32,664 INFO] Step 400/50000; acc:  17.63; ppl: 33.32; xent: 3.51; lr: 0.00050; 4521/5416 tok/s;    147 sec
+[2020-12-09 09:21:18,300 INFO] Step 500/50000; acc:  23.21; ppl: 24.42; xent: 3.20; lr: 0.00050; 3737/4443 tok/s;    193 sec
+[2020-12-09 09:21:44,739 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 09:22:00,029 INFO] Step 600/50000; acc:  28.61; ppl: 19.08; xent: 2.95; lr: 0.00050; 4427/5279 tok/s;    235 sec
+[2020-12-09 09:22:40,843 INFO] Step 700/50000; acc:  36.24; ppl: 13.80; xent: 2.62; lr: 0.00050; 4411/5352 tok/s;    275 sec
+[2020-12-09 09:23:21,295 INFO] Step 800/50000; acc:  47.92; ppl:  8.64; xent: 2.16; lr: 0.00050; 4702/5455 tok/s;    316 sec
+[2020-12-09 09:23:52,768 INFO] Step 900/50000; acc:  57.80; ppl:  5.75; xent: 1.75; lr: 0.00050; 6360/7583 tok/s;    347 sec
+[2020-12-09 09:23:59,892 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 09:24:29,773 INFO] Step 1000/50000; acc:  58.92; ppl:  5.83; xent: 1.76; lr: 0.00050; 5007/6057 tok/s;    384 sec
+[2020-12-09 09:25:12,402 INFO] Step 1100/50000; acc:  61.76; ppl:  5.27; xent: 1.66; lr: 0.00050; 4209/5001 tok/s;    427 sec
+[2020-12-09 09:25:17,787 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 09:25:50,041 INFO] Step 1200/50000; acc:  64.94; ppl:  4.61; xent: 1.53; lr: 0.00050; 4968/5934 tok/s;    465 sec
+[2020-12-09 09:26:34,562 INFO] Step 1300/50000; acc:  66.50; ppl:  4.37; xent: 1.48; lr: 0.00050; 3854/4621 tok/s;    509 sec
+[2020-12-09 09:26:43,433 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 09:27:15,249 INFO] Step 1400/50000; acc:  71.47; ppl:  3.60; xent: 1.28; lr: 0.00050; 4350/5209 tok/s;    550 sec
+[2020-12-09 09:27:54,493 INFO] Step 1500/50000; acc:  74.48; ppl:  3.24; xent: 1.18; lr: 0.00050; 4414/5239 tok/s;    589 sec
+[2020-12-09 09:28:33,696 INFO] Step 1600/50000; acc:  85.04; ppl:  2.21; xent: 0.79; lr: 0.00050; 4904/5897 tok/s;    628 sec
+[2020-12-09 09:29:00,674 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 09:29:05,666 INFO] Step 1700/50000; acc:  88.90; ppl:  1.91; xent: 0.65; lr: 0.00050; 6257/7309 tok/s;    660 sec
+[2020-12-09 09:29:43,673 INFO] Step 1800/50000; acc:  79.79; ppl:  2.64; xent: 0.97; lr: 0.00050; 4928/5961 tok/s;    698 sec
+[2020-12-09 09:30:18,866 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 09:30:25,417 INFO] Step 1900/50000; acc:  80.93; ppl:  2.54; xent: 0.93; lr: 0.00050; 4208/5009 tok/s;    740 sec
+[2020-12-09 09:31:10,558 INFO] Step 2000/50000; acc:  80.90; ppl:  2.52; xent: 0.92; lr: 0.00050; 3837/4602 tok/s;    785 sec
+[2020-12-09 09:31:46,298 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 09:31:52,034 INFO] Step 2100/50000; acc:  82.32; ppl:  2.39; xent: 0.87; lr: 0.00050; 4187/4968 tok/s;    827 sec
+[2020-12-09 09:32:32,938 INFO] Step 2200/50000; acc:  84.29; ppl:  2.20; xent: 0.79; lr: 0.00050; 4247/5107 tok/s;    867 sec
+[2020-12-09 09:33:17,697 INFO] Step 2300/50000; acc:  84.16; ppl:  2.21; xent: 0.79; lr: 0.00050; 3896/4627 tok/s;    912 sec
+[2020-12-09 09:33:47,182 INFO] Step 2400/50000; acc:  96.30; ppl:  1.45; xent: 0.37; lr: 0.00050; 7019/8355 tok/s;    942 sec
+[2020-12-09 09:34:04,194 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 09:34:20,335 INFO] Step 2500/50000; acc:  93.09; ppl:  1.59; xent: 0.47; lr: 0.00050; 5466/6489 tok/s;    975 sec
+[2020-12-09 09:35:02,323 INFO] Step 2600/50000; acc:  87.09; ppl:  1.96; xent: 0.67; lr: 0.00050; 4385/5284 tok/s;   1017 sec
+[2020-12-09 09:35:23,979 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 09:35:43,504 INFO] Step 2700/50000; acc:  87.23; ppl:  1.95; xent: 0.67; lr: 0.00050; 4250/5007 tok/s;   1058 sec
+[2020-12-09 09:36:23,472 INFO] Step 2800/50000; acc:  87.75; ppl:  1.90; xent: 0.64; lr: 0.00050; 4459/5345 tok/s;   1098 sec
+[2020-12-09 09:36:52,121 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 09:37:09,640 INFO] Step 2900/50000; acc:  88.68; ppl:  1.85; xent: 0.61; lr: 0.00050; 3750/4428 tok/s;   1144 sec
+[2020-12-09 09:37:49,620 INFO] Step 3000/50000; acc:  89.35; ppl:  1.80; xent: 0.59; lr: 0.00050; 4520/5526 tok/s;   1184 sec
+[2020-12-09 09:38:31,570 INFO] Step 3100/50000; acc:  91.74; ppl:  1.66; xent: 0.51; lr: 0.00050; 4173/4896 tok/s;   1226 sec
+[2020-12-09 09:39:03,504 INFO] Step 3200/50000; acc:  97.62; ppl:  1.34; xent: 0.29; lr: 0.00050; 6180/7260 tok/s;   1258 sec
+[2020-12-09 09:39:13,184 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 09:39:44,500 INFO] Step 3300/50000; acc:  93.45; ppl:  1.53; xent: 0.43; lr: 0.00050; 4474/5308 tok/s;   1299 sec
+[2020-12-09 09:40:23,314 INFO] Step 3400/50000; acc:  90.94; ppl:  1.67; xent: 0.52; lr: 0.00050; 4658/5675 tok/s;   1338 sec
+[2020-12-09 09:40:30,787 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 09:41:02,907 INFO] Step 3500/50000; acc:  92.05; ppl:  1.62; xent: 0.48; lr: 0.00050; 4691/5609 tok/s;   1377 sec
+[2020-12-09 09:41:45,413 INFO] Step 3600/50000; acc:  91.04; ppl:  1.68; xent: 0.52; lr: 0.00050; 4082/4891 tok/s;   1420 sec
+[2020-12-09 09:41:58,515 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 09:42:30,805 INFO] Step 3700/50000; acc:  92.42; ppl:  1.61; xent: 0.47; lr: 0.00050; 3671/4361 tok/s;   1465 sec
+[2020-12-09 09:43:12,273 INFO] Step 3800/50000; acc:  92.28; ppl:  1.61; xent: 0.48; lr: 0.00050; 4383/5218 tok/s;   1507 sec
+[2020-12-09 09:43:46,778 INFO] Step 3900/50000; acc:  96.01; ppl:  1.41; xent: 0.34; lr: 0.00050; 5582/6639 tok/s;   1541 sec
+[2020-12-09 09:44:16,658 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 09:44:18,420 INFO] Step 4000/50000; acc:  97.98; ppl:  1.31; xent: 0.27; lr: 0.00050; 6310/7419 tok/s;   1573 sec
+[2020-12-09 09:44:18,428 INFO] Saving checkpoint data/models/ta2knrnn_step_4000.pt
+[2020-12-09 09:44:57,604 INFO] Step 4100/50000; acc:  94.41; ppl:  1.48; xent: 0.39; lr: 0.00050; 4832/5804 tok/s;   1612 sec
+[2020-12-09 09:45:35,874 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 09:45:39,934 INFO] Step 4200/50000; acc:  93.89; ppl:  1.50; xent: 0.40; lr: 0.00050; 4011/4907 tok/s;   1654 sec
+[2020-12-09 09:46:26,419 INFO] Step 4300/50000; acc:  94.48; ppl:  1.49; xent: 0.40; lr: 0.00050; 3726/4383 tok/s;   1701 sec
+[2020-12-09 09:47:04,133 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 09:47:06,054 INFO] Step 4400/50000; acc:  94.10; ppl:  1.50; xent: 0.41; lr: 0.00050; 4455/5351 tok/s;   1741 sec
+[2020-12-09 09:47:50,269 INFO] Step 4500/50000; acc:  95.30; ppl:  1.45; xent: 0.37; lr: 0.00050; 3880/4648 tok/s;   1785 sec
+[2020-12-09 09:48:31,290 INFO] Step 4600/50000; acc:  94.76; ppl:  1.46; xent: 0.38; lr: 0.00050; 4388/5210 tok/s;   1826 sec
+[2020-12-09 09:49:04,029 INFO] Step 4700/50000; acc:  98.36; ppl:  1.27; xent: 0.24; lr: 0.00050; 5784/6886 tok/s;   1859 sec
+[2020-12-09 09:49:26,226 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 09:49:37,556 INFO] Step 4800/50000; acc:  98.02; ppl:  1.28; xent: 0.24; lr: 0.00050; 5784/6777 tok/s;   1892 sec
+[2020-12-09 09:50:15,407 INFO] Step 4900/50000; acc:  96.47; ppl:  1.36; xent: 0.31; lr: 0.00050; 4849/5893 tok/s;   1930 sec
+[2020-12-09 09:50:46,208 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 09:50:58,903 INFO] Step 5000/50000; acc:  96.23; ppl:  1.39; xent: 0.33; lr: 0.00050; 3910/4652 tok/s;   1973 sec
+[2020-12-09 09:51:44,756 INFO] Step 5100/50000; acc:  96.18; ppl:  1.40; xent: 0.34; lr: 0.00050; 3796/4534 tok/s;   2019 sec
+[2020-12-09 09:52:13,653 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 09:52:24,355 INFO] Step 5200/50000; acc:  96.41; ppl:  1.38; xent: 0.32; lr: 0.00050; 4347/5185 tok/s;   2059 sec
+[2020-12-09 09:53:09,288 INFO] Step 5300/50000; acc:  96.71; ppl:  1.37; xent: 0.31; lr: 0.00050; 3855/4587 tok/s;   2104 sec
+[2020-12-09 09:53:48,454 INFO] Step 5400/50000; acc:  96.80; ppl:  1.36; xent: 0.31; lr: 0.00050; 4583/5483 tok/s;   2143 sec
+[2020-12-09 09:54:20,079 INFO] Step 5500/50000; acc:  98.72; ppl:  1.24; xent: 0.22; lr: 0.00050; 6188/7298 tok/s;   2175 sec
+[2020-12-09 09:54:36,039 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 09:54:54,588 INFO] Step 5600/50000; acc:  98.30; ppl:  1.26; xent: 0.23; lr: 0.00050; 5346/6402 tok/s;   2209 sec
+[2020-12-09 09:55:39,271 INFO] Step 5700/50000; acc:  97.43; ppl:  1.32; xent: 0.28; lr: 0.00050; 4048/4847 tok/s;   2254 sec
+[2020-12-09 09:55:56,702 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 09:56:17,481 INFO] Step 5800/50000; acc:  97.46; ppl:  1.32; xent: 0.28; lr: 0.00050; 4438/5374 tok/s;   2292 sec
+[2020-12-09 09:56:58,042 INFO] Step 5900/50000; acc:  97.57; ppl:  1.32; xent: 0.28; lr: 0.00050; 4391/5204 tok/s;   2333 sec
+[2020-12-09 09:57:23,201 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 09:57:43,150 INFO] Step 6000/50000; acc:  97.58; ppl:  1.32; xent: 0.28; lr: 0.00050; 3773/4453 tok/s;   2378 sec
+[2020-12-09 09:58:23,240 INFO] Step 6100/50000; acc:  97.70; ppl:  1.31; xent: 0.27; lr: 0.00050; 4456/5371 tok/s;   2418 sec
+[2020-12-09 09:59:02,760 INFO] Step 6200/50000; acc:  98.04; ppl:  1.28; xent: 0.25; lr: 0.00050; 4551/5389 tok/s;   2457 sec
+[2020-12-09 09:59:35,599 INFO] Step 6300/50000; acc:  98.94; ppl:  1.22; xent: 0.20; lr: 0.00050; 6085/7169 tok/s;   2490 sec
+[2020-12-09 09:59:44,772 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:00:11,811 INFO] Step 6400/50000; acc:  98.52; ppl:  1.24; xent: 0.22; lr: 0.00050; 4667/5580 tok/s;   2526 sec
+[2020-12-09 10:00:54,623 INFO] Step 6500/50000; acc:  98.13; ppl:  1.27; xent: 0.24; lr: 0.00050; 4246/5129 tok/s;   2569 sec
+[2020-12-09 10:01:05,347 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:01:38,134 INFO] Step 6600/50000; acc:  97.96; ppl:  1.29; xent: 0.26; lr: 0.00050; 3995/4729 tok/s;   2613 sec
+[2020-12-09 10:02:17,837 INFO] Step 6700/50000; acc:  98.01; ppl:  1.30; xent: 0.26; lr: 0.00050; 4641/5620 tok/s;   2652 sec
+[2020-12-09 10:02:27,569 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:03:04,563 INFO] Step 6800/50000; acc:  98.13; ppl:  1.28; xent: 0.25; lr: 0.00050; 3837/4508 tok/s;   2699 sec
+[2020-12-09 10:03:44,289 INFO] Step 6900/50000; acc:  98.09; ppl:  1.28; xent: 0.25; lr: 0.00050; 4511/5448 tok/s;   2739 sec
+[2020-12-09 10:04:18,846 INFO] Step 7000/50000; acc:  98.70; ppl:  1.23; xent: 0.21; lr: 0.00050; 5215/6135 tok/s;   2773 sec
+[2020-12-09 10:04:50,987 INFO] Step 7100/50000; acc:  98.90; ppl:  1.20; xent: 0.18; lr: 0.00050; 5992/7137 tok/s;   2806 sec
+[2020-12-09 10:04:51,714 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:05:30,019 INFO] Step 7200/50000; acc:  98.75; ppl:  1.23; xent: 0.21; lr: 0.00050; 4598/5512 tok/s;   2845 sec
+[2020-12-09 10:06:08,911 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:06:12,309 INFO] Step 7300/50000; acc:  98.48; ppl:  1.24; xent: 0.22; lr: 0.00050; 4375/5269 tok/s;   2887 sec
+[2020-12-09 10:06:52,253 INFO] Step 7400/50000; acc:  98.68; ppl:  1.25; xent: 0.22; lr: 0.00050; 4614/5459 tok/s;   2927 sec
+[2020-12-09 10:07:35,086 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:07:36,964 INFO] Step 7500/50000; acc:  98.29; ppl:  1.27; xent: 0.24; lr: 0.00050; 3698/4441 tok/s;   2972 sec
+[2020-12-09 10:08:22,957 INFO] Step 7600/50000; acc:  98.44; ppl:  1.26; xent: 0.23; lr: 0.00050; 3960/4638 tok/s;   3018 sec
+[2020-12-09 10:09:03,835 INFO] Step 7700/50000; acc:  98.27; ppl:  1.26; xent: 0.23; lr: 0.00050; 4140/5042 tok/s;   3058 sec
+[2020-12-09 10:09:42,815 INFO] Step 7800/50000; acc:  98.90; ppl:  1.20; xent: 0.18; lr: 0.00050; 4724/5590 tok/s;   3097 sec
+[2020-12-09 10:10:08,567 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:10:15,700 INFO] Step 7900/50000; acc:  98.96; ppl:  1.20; xent: 0.18; lr: 0.00050; 5946/7019 tok/s;   3130 sec
+[2020-12-09 10:10:53,469 INFO] Step 8000/50000; acc:  98.85; ppl:  1.22; xent: 0.20; lr: 0.00050; 5060/6070 tok/s;   3168 sec
+[2020-12-09 10:10:53,476 INFO] Saving checkpoint data/models/ta2knrnn_step_8000.pt
+[2020-12-09 10:11:15,799 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:11:35,468 INFO] Step 8100/50000; acc:  98.71; ppl:  1.23; xent: 0.21; lr: 0.00050; 4286/5186 tok/s;   3210 sec
+[2020-12-09 10:12:15,111 INFO] Step 8200/50000; acc:  98.76; ppl:  1.23; xent: 0.21; lr: 0.00050; 4723/5618 tok/s;   3250 sec
+[2020-12-09 10:12:41,498 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:13:02,321 INFO] Step 8300/50000; acc:  98.57; ppl:  1.24; xent: 0.22; lr: 0.00050; 3465/4113 tok/s;   3297 sec
+[2020-12-09 10:13:40,219 INFO] Step 8400/50000; acc:  98.62; ppl:  1.23; xent: 0.21; lr: 0.00050; 4811/5829 tok/s;   3335 sec
+[2020-12-09 10:14:19,357 INFO] Step 8500/50000; acc:  98.71; ppl:  1.22; xent: 0.20; lr: 0.00050; 4548/5372 tok/s;   3374 sec
+[2020-12-09 10:14:55,115 INFO] Step 8600/50000; acc:  99.01; ppl:  1.18; xent: 0.17; lr: 0.00050; 5117/6033 tok/s;   3410 sec
+[2020-12-09 10:15:17,008 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:15:33,578 INFO] Step 8700/50000; acc:  98.99; ppl:  1.18; xent: 0.17; lr: 0.00050; 4714/5701 tok/s;   3448 sec
+[2020-12-09 10:16:08,967 INFO] Step 8800/50000; acc:  98.95; ppl:  1.20; xent: 0.18; lr: 0.00050; 5521/6538 tok/s;   3484 sec
+[2020-12-09 10:16:21,391 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:16:50,247 INFO] Step 8900/50000; acc:  98.86; ppl:  1.22; xent: 0.20; lr: 0.00050; 4496/5421 tok/s;   3525 sec
+[2020-12-09 10:17:32,750 INFO] Step 9000/50000; acc:  98.81; ppl:  1.22; xent: 0.20; lr: 0.00050; 4137/4879 tok/s;   3567 sec
+[2020-12-09 10:17:45,457 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:18:12,979 INFO] Step 9100/50000; acc:  98.75; ppl:  1.22; xent: 0.20; lr: 0.00050; 4251/5062 tok/s;   3608 sec
+[2020-12-09 10:18:57,494 INFO] Step 9200/50000; acc:  98.70; ppl:  1.22; xent: 0.20; lr: 0.00050; 3900/4659 tok/s;   3652 sec
+[2020-12-09 10:19:34,678 INFO] Step 9300/50000; acc:  98.93; ppl:  1.19; xent: 0.18; lr: 0.00050; 4945/5908 tok/s;   3689 sec
+[2020-12-09 10:20:12,154 INFO] Step 9400/50000; acc:  99.05; ppl:  1.17; xent: 0.16; lr: 0.00050; 5022/5912 tok/s;   3727 sec
+[2020-12-09 10:20:18,206 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:20:47,018 INFO] Step 9500/50000; acc:  99.02; ppl:  1.19; xent: 0.17; lr: 0.00050; 5484/6610 tok/s;   3762 sec
+[2020-12-09 10:21:23,324 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:21:25,370 INFO] Step 9600/50000; acc:  98.94; ppl:  1.20; xent: 0.18; lr: 0.00050; 5009/5992 tok/s;   3800 sec
+[2020-12-09 10:22:06,093 INFO] Step 9700/50000; acc:  98.89; ppl:  1.21; xent: 0.19; lr: 0.00050; 4386/5217 tok/s;   3841 sec
+[2020-12-09 10:22:49,524 INFO] Step 9800/50000; acc:  98.76; ppl:  1.22; xent: 0.20; lr: 0.00050; 3935/4693 tok/s;   3884 sec
+[2020-12-09 10:22:50,193 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:23:30,538 INFO] Step 9900/50000; acc:  98.72; ppl:  1.22; xent: 0.20; lr: 0.00050; 4298/5127 tok/s;   3925 sec
+[2020-12-09 10:24:14,938 INFO] Step 10000/50000; acc:  98.59; ppl:  1.22; xent: 0.20; lr: 0.00050; 3900/4674 tok/s;   3969 sec
+[2020-12-09 10:24:49,538 INFO] Step 10100/50000; acc:  99.06; ppl:  1.17; xent: 0.16; lr: 0.00050; 5443/6511 tok/s;   4004 sec
+[2020-12-09 10:25:24,225 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:25:28,215 INFO] Step 10200/50000; acc:  98.89; ppl:  1.18; xent: 0.16; lr: 0.00050; 4607/5442 tok/s;   4043 sec
+[2020-12-09 10:26:04,885 INFO] Step 10300/50000; acc:  98.99; ppl:  1.19; xent: 0.17; lr: 0.00050; 5391/6462 tok/s;   4079 sec
+[2020-12-09 10:26:29,231 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:26:42,166 INFO] Step 10400/50000; acc:  99.07; ppl:  1.20; xent: 0.18; lr: 0.00050; 4960/5942 tok/s;   4117 sec
+[2020-12-09 10:27:26,422 INFO] Step 10500/50000; acc:  98.74; ppl:  1.22; xent: 0.20; lr: 0.00050; 4076/4836 tok/s;   4161 sec
+[2020-12-09 10:27:52,206 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:28:06,174 INFO] Step 10600/50000; acc:  98.75; ppl:  1.21; xent: 0.19; lr: 0.00050; 4436/5256 tok/s;   4201 sec
+[2020-12-09 10:28:50,997 INFO] Step 10700/50000; acc:  98.51; ppl:  1.23; xent: 0.20; lr: 0.00050; 3920/4671 tok/s;   4246 sec
+[2020-12-09 10:29:32,586 INFO] Step 10800/50000; acc:  98.60; ppl:  1.22; xent: 0.20; lr: 0.00050; 4239/5085 tok/s;   4287 sec
+[2020-12-09 10:30:06,885 INFO] Step 10900/50000; acc:  98.98; ppl:  1.17; xent: 0.16; lr: 0.00050; 5341/6412 tok/s;   4321 sec
+[2020-12-09 10:30:27,181 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:30:43,549 INFO] Step 11000/50000; acc:  99.00; ppl:  1.17; xent: 0.16; lr: 0.00050; 4974/5948 tok/s;   4358 sec
+[2020-12-09 10:31:20,524 INFO] Step 11100/50000; acc:  99.13; ppl:  1.18; xent: 0.16; lr: 0.00050; 5253/6240 tok/s;   4395 sec
+[2020-12-09 10:31:32,279 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:31:58,538 INFO] Step 11200/50000; acc:  99.06; ppl:  1.19; xent: 0.17; lr: 0.00050; 4819/5690 tok/s;   4433 sec
+[2020-12-09 10:32:41,239 INFO] Step 11300/50000; acc:  98.81; ppl:  1.20; xent: 0.19; lr: 0.00050; 3941/4734 tok/s;   4476 sec
+[2020-12-09 10:32:58,414 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:33:22,415 INFO] Step 11400/50000; acc:  98.89; ppl:  1.20; xent: 0.18; lr: 0.00050; 4565/5511 tok/s;   4517 sec
+[2020-12-09 10:34:04,769 INFO] Step 11500/50000; acc:  98.83; ppl:  1.19; xent: 0.17; lr: 0.00050; 4467/5318 tok/s;   4559 sec
+[2020-12-09 10:34:47,745 INFO] Step 11600/50000; acc:  98.92; ppl:  1.17; xent: 0.16; lr: 0.00050; 3920/4624 tok/s;   4602 sec
+[2020-12-09 10:35:24,983 INFO] Step 11700/50000; acc:  98.97; ppl:  1.16; xent: 0.15; lr: 0.00050; 5082/6052 tok/s;   4640 sec
+[2020-12-09 10:35:34,408 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:36:00,772 INFO] Step 11800/50000; acc:  99.18; ppl:  1.15; xent: 0.14; lr: 0.00050; 5209/6268 tok/s;   4675 sec
+[2020-12-09 10:36:37,243 INFO] Step 11900/50000; acc:  99.21; ppl:  1.16; xent: 0.15; lr: 0.00050; 5205/6172 tok/s;   4712 sec
+[2020-12-09 10:36:37,757 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:37:22,906 INFO] Step 12000/50000; acc:  98.99; ppl:  1.19; xent: 0.17; lr: 0.00050; 3745/4482 tok/s;   4757 sec
+[2020-12-09 10:37:22,915 INFO] Saving checkpoint data/models/ta2knrnn_step_12000.pt
+[2020-12-09 10:38:03,381 INFO] Step 12100/50000; acc:  98.94; ppl:  1.18; xent: 0.17; lr: 0.00050; 4318/5139 tok/s;   4798 sec
+[2020-12-09 10:38:06,034 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:38:44,468 INFO] Step 12200/50000; acc:  99.07; ppl:  1.17; xent: 0.16; lr: 0.00050; 4389/5179 tok/s;   4839 sec
+[2020-12-09 10:39:29,640 INFO] Step 12300/50000; acc:  98.80; ppl:  1.18; xent: 0.17; lr: 0.00050; 3850/4630 tok/s;   4884 sec
+[2020-12-09 10:40:07,584 INFO] Step 12400/50000; acc:  99.15; ppl:  1.15; xent: 0.14; lr: 0.00050; 4992/5998 tok/s;   4922 sec
+[2020-12-09 10:40:47,534 INFO] Step 12500/50000; acc:  99.09; ppl:  1.15; xent: 0.14; lr: 0.00050; 4272/5035 tok/s;   4962 sec
+[2020-12-09 10:40:48,893 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:41:23,435 INFO] Step 12600/50000; acc:  99.28; ppl:  1.14; xent: 0.13; lr: 0.00050; 5458/6568 tok/s;   4998 sec
+[2020-12-09 10:41:49,837 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:42:00,751 INFO] Step 12700/50000; acc:  99.24; ppl:  1.16; xent: 0.15; lr: 0.00050; 5030/5972 tok/s;   5035 sec
+[2020-12-09 10:42:43,123 INFO] Step 12800/50000; acc:  99.07; ppl:  1.17; xent: 0.16; lr: 0.00050; 4144/4951 tok/s;   5078 sec
+[2020-12-09 10:43:15,902 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:43:25,649 INFO] Step 12900/50000; acc:  99.03; ppl:  1.17; xent: 0.16; lr: 0.00050; 4162/4924 tok/s;   5120 sec
+[2020-12-09 10:44:11,349 INFO] Step 13000/50000; acc:  98.97; ppl:  1.17; xent: 0.16; lr: 0.00050; 3865/4603 tok/s;   5166 sec
+[2020-12-09 10:44:52,154 INFO] Step 13100/50000; acc:  98.96; ppl:  1.17; xent: 0.16; lr: 0.00050; 4344/5255 tok/s;   5207 sec
+[2020-12-09 10:45:32,237 INFO] Step 13200/50000; acc:  99.13; ppl:  1.14; xent: 0.13; lr: 0.00050; 4627/5470 tok/s;   5247 sec
+[2020-12-09 10:46:02,965 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:46:12,430 INFO] Step 13300/50000; acc:  99.22; ppl:  1.14; xent: 0.13; lr: 0.00050; 4502/5360 tok/s;   5287 sec
+[2020-12-09 10:46:45,780 INFO] Step 13400/50000; acc:  99.26; ppl:  1.14; xent: 0.13; lr: 0.00050; 5777/6864 tok/s;   5320 sec
+[2020-12-09 10:47:01,498 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:47:22,378 INFO] Step 13500/50000; acc:  99.14; ppl:  1.16; xent: 0.15; lr: 0.00050; 5154/6303 tok/s;   5357 sec
+[2020-12-09 10:48:04,112 INFO] Step 13600/50000; acc:  99.10; ppl:  1.17; xent: 0.16; lr: 0.00050; 4241/5028 tok/s;   5399 sec
+[2020-12-09 10:48:25,698 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:48:51,200 INFO] Step 13700/50000; acc:  99.00; ppl:  1.17; xent: 0.16; lr: 0.00050; 3762/4443 tok/s;   5446 sec
+[2020-12-09 10:49:33,148 INFO] Step 13800/50000; acc:  98.95; ppl:  1.17; xent: 0.16; lr: 0.00050; 4318/5146 tok/s;   5488 sec
+[2020-12-09 10:50:16,841 INFO] Step 13900/50000; acc:  99.02; ppl:  1.16; xent: 0.15; lr: 0.00050; 3985/4725 tok/s;   5531 sec
+[2020-12-09 10:50:58,950 INFO] Step 14000/50000; acc:  99.09; ppl:  1.15; xent: 0.14; lr: 0.00050; 4273/5119 tok/s;   5574 sec
+[2020-12-09 10:51:14,229 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:51:33,894 INFO] Step 14100/50000; acc:  99.19; ppl:  1.14; xent: 0.13; lr: 0.00050; 5270/6347 tok/s;   5608 sec
+[2020-12-09 10:52:07,124 INFO] Step 14200/50000; acc:  99.30; ppl:  1.14; xent: 0.13; lr: 0.00050; 5861/6916 tok/s;   5642 sec
+[2020-12-09 10:52:12,169 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:52:46,452 INFO] Step 14300/50000; acc:  99.12; ppl:  1.17; xent: 0.15; lr: 0.00050; 4697/5627 tok/s;   5681 sec
+[2020-12-09 10:53:30,432 INFO] Step 14400/50000; acc:  98.97; ppl:  1.18; xent: 0.16; lr: 0.00050; 3940/4768 tok/s;   5725 sec
+[2020-12-09 10:53:34,934 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:54:14,531 INFO] Step 14500/50000; acc:  98.94; ppl:  1.18; xent: 0.16; lr: 0.00050; 3899/4634 tok/s;   5769 sec
+[2020-12-09 10:54:55,991 INFO] Step 14600/50000; acc:  98.95; ppl:  1.17; xent: 0.15; lr: 0.00050; 4239/5037 tok/s;   5811 sec
+[2020-12-09 10:55:37,808 INFO] Step 14700/50000; acc:  98.90; ppl:  1.17; xent: 0.16; lr: 0.00050; 4160/4876 tok/s;   5852 sec
+[2020-12-09 10:56:21,050 INFO] Step 14800/50000; acc:  98.68; ppl:  1.18; xent: 0.17; lr: 0.00050; 4266/5079 tok/s;   5896 sec
+[2020-12-09 10:56:26,916 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:56:53,452 INFO] Step 14900/50000; acc:  99.25; ppl:  1.15; xent: 0.14; lr: 0.00050; 6133/7373 tok/s;   5928 sec
+[2020-12-09 10:57:22,569 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:57:28,303 INFO] Step 15000/50000; acc:  99.12; ppl:  1.16; xent: 0.15; lr: 0.00050; 5461/6518 tok/s;   5963 sec
+[2020-12-09 10:58:08,807 INFO] Step 15100/50000; acc:  98.96; ppl:  1.18; xent: 0.17; lr: 0.00050; 4315/5175 tok/s;   6003 sec
+[2020-12-09 10:58:47,454 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 10:58:53,948 INFO] Step 15200/50000; acc:  98.91; ppl:  1.18; xent: 0.16; lr: 0.00050; 3823/4539 tok/s;   6048 sec
+[2020-12-09 10:59:34,906 INFO] Step 15300/50000; acc:  98.97; ppl:  1.17; xent: 0.15; lr: 0.00050; 4480/5359 tok/s;   6089 sec
+[2020-12-09 11:00:21,148 INFO] Step 15400/50000; acc:  98.92; ppl:  1.16; xent: 0.15; lr: 0.00050; 3797/4528 tok/s;   6136 sec
+[2020-12-09 11:01:03,935 INFO] Step 15500/50000; acc:  98.80; ppl:  1.17; xent: 0.16; lr: 0.00050; 4219/4997 tok/s;   6178 sec
+[2020-12-09 11:01:37,268 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:01:43,826 INFO] Step 15600/50000; acc:  99.11; ppl:  1.14; xent: 0.13; lr: 0.00050; 4672/5553 tok/s;   6218 sec
+[2020-12-09 11:02:15,208 INFO] Step 15700/50000; acc:  99.28; ppl:  1.13; xent: 0.12; lr: 0.00050; 6520/7781 tok/s;   6250 sec
+[2020-12-09 11:02:29,624 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:02:52,227 INFO] Step 15800/50000; acc:  99.18; ppl:  1.15; xent: 0.14; lr: 0.00050; 5262/6250 tok/s;   6287 sec
+[2020-12-09 11:03:36,885 INFO] Step 15900/50000; acc:  98.98; ppl:  1.17; xent: 0.16; lr: 0.00050; 3855/4725 tok/s;   6331 sec
+[2020-12-09 11:03:52,425 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:04:17,838 INFO] Step 16000/50000; acc:  99.03; ppl:  1.16; xent: 0.15; lr: 0.00050; 4191/4987 tok/s;   6372 sec
+[2020-12-09 11:04:17,847 INFO] Saving checkpoint data/models/ta2knrnn_step_16000.pt
+[2020-12-09 11:05:04,003 INFO] Step 16100/50000; acc:  98.84; ppl:  1.17; xent: 0.16; lr: 0.00050; 3891/4584 tok/s;   6419 sec
+[2020-12-09 11:05:45,207 INFO] Step 16200/50000; acc:  99.04; ppl:  1.15; xent: 0.14; lr: 0.00050; 4254/5072 tok/s;   6460 sec
+[2020-12-09 11:06:28,070 INFO] Step 16300/50000; acc:  99.01; ppl:  1.14; xent: 0.13; lr: 0.00050; 4219/5056 tok/s;   6503 sec
+[2020-12-09 11:06:48,369 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:07:05,958 INFO] Step 16400/50000; acc:  99.25; ppl:  1.13; xent: 0.12; lr: 0.00050; 4977/5862 tok/s;   6541 sec
+[2020-12-09 11:07:38,485 INFO] Step 16500/50000; acc:  99.33; ppl:  1.12; xent: 0.11; lr: 0.00050; 6106/7276 tok/s;   6573 sec
+[2020-12-09 11:07:43,355 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:08:22,796 INFO] Step 16600/50000; acc:  99.06; ppl:  1.15; xent: 0.14; lr: 0.00050; 3943/4761 tok/s;   6617 sec
+[2020-12-09 11:09:01,779 INFO] Step 16700/50000; acc:  99.05; ppl:  1.15; xent: 0.14; lr: 0.00050; 4665/5625 tok/s;   6656 sec
+[2020-12-09 11:09:05,262 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:09:47,035 INFO] Step 16800/50000; acc:  98.99; ppl:  1.16; xent: 0.14; lr: 0.00050; 3836/4574 tok/s;   6702 sec
+[2020-12-09 11:10:27,372 INFO] Step 16900/50000; acc:  99.02; ppl:  1.15; xent: 0.14; lr: 0.00050; 4368/5198 tok/s;   6742 sec
+[2020-12-09 11:11:11,804 INFO] Step 17000/50000; acc:  99.15; ppl:  1.13; xent: 0.13; lr: 0.00050; 3951/4657 tok/s;   6786 sec
+[2020-12-09 11:11:52,688 INFO] Step 17100/50000; acc:  99.05; ppl:  1.13; xent: 0.12; lr: 0.00050; 4257/5071 tok/s;   6827 sec
+[2020-12-09 11:11:59,093 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:12:24,824 INFO] Step 17200/50000; acc:  99.32; ppl:  1.12; xent: 0.11; lr: 0.00050; 6261/7431 tok/s;   6859 sec
+[2020-12-09 11:12:54,347 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:12:59,278 INFO] Step 17300/50000; acc:  99.32; ppl:  1.13; xent: 0.13; lr: 0.00050; 5424/6502 tok/s;   6894 sec
+[2020-12-09 11:13:45,089 INFO] Step 17400/50000; acc:  99.13; ppl:  1.16; xent: 0.14; lr: 0.00050; 3846/4575 tok/s;   6940 sec
+[2020-12-09 11:14:15,267 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:14:24,639 INFO] Step 17500/50000; acc:  99.07; ppl:  1.15; xent: 0.14; lr: 0.00050; 4743/5663 tok/s;   6979 sec
+[2020-12-09 11:15:06,724 INFO] Step 17600/50000; acc:  99.05; ppl:  1.15; xent: 0.14; lr: 0.00050; 4298/5162 tok/s;   7021 sec
+[2020-12-09 11:15:49,559 INFO] Step 17700/50000; acc:  99.00; ppl:  1.14; xent: 0.13; lr: 0.00050; 3955/4731 tok/s;   7064 sec
+[2020-12-09 11:16:35,340 INFO] Step 17800/50000; acc:  99.19; ppl:  1.13; xent: 0.12; lr: 0.00050; 3878/4599 tok/s;   7110 sec
+[2020-12-09 11:17:05,210 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:17:12,324 INFO] Step 17900/50000; acc:  99.16; ppl:  1.12; xent: 0.12; lr: 0.00050; 5412/6342 tok/s;   7147 sec
+[2020-12-09 11:17:45,003 INFO] Step 18000/50000; acc:  99.31; ppl:  1.12; xent: 0.11; lr: 0.00050; 6169/7397 tok/s;   7180 sec
+[2020-12-09 11:18:00,432 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:18:23,272 INFO] Step 18100/50000; acc:  99.30; ppl:  1.13; xent: 0.12; lr: 0.00050; 4647/5581 tok/s;   7218 sec
+[2020-12-09 11:19:05,012 INFO] Step 18200/50000; acc:  99.12; ppl:  1.14; xent: 0.13; lr: 0.00050; 4212/5095 tok/s;   7260 sec
+[2020-12-09 11:19:23,424 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:19:46,173 INFO] Step 18300/50000; acc:  99.08; ppl:  1.14; xent: 0.13; lr: 0.00050; 4139/4952 tok/s;   7301 sec
+[2020-12-09 11:20:32,881 INFO] Step 18400/50000; acc:  99.07; ppl:  1.14; xent: 0.13; lr: 0.00050; 3685/4343 tok/s;   7347 sec
+[2020-12-09 11:21:11,808 INFO] Step 18500/50000; acc:  99.02; ppl:  1.14; xent: 0.13; lr: 0.00050; 4704/5727 tok/s;   7386 sec
+[2020-12-09 11:21:58,723 INFO] Step 18600/50000; acc:  99.24; ppl:  1.13; xent: 0.12; lr: 0.00050; 3884/4544 tok/s;   7433 sec
+[2020-12-09 11:22:16,411 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:22:34,210 INFO] Step 18700/50000; acc:  99.22; ppl:  1.12; xent: 0.11; lr: 0.00050; 5415/6421 tok/s;   7469 sec
+[2020-12-09 11:23:06,628 INFO] Step 18800/50000; acc:  99.36; ppl:  1.12; xent: 0.11; lr: 0.00050; 6173/7341 tok/s;   7501 sec
+[2020-12-09 11:23:11,004 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:23:48,881 INFO] Step 18900/50000; acc:  99.22; ppl:  1.14; xent: 0.13; lr: 0.00050; 4078/4904 tok/s;   7543 sec
+[2020-12-09 11:24:27,650 INFO] Step 19000/50000; acc:  99.05; ppl:  1.15; xent: 0.14; lr: 0.00050; 4482/5433 tok/s;   7582 sec
+[2020-12-09 11:24:33,740 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:25:13,952 INFO] Step 19100/50000; acc:  99.13; ppl:  1.14; xent: 0.13; lr: 0.00050; 3618/4311 tok/s;   7629 sec
+[2020-12-09 11:25:55,602 INFO] Step 19200/50000; acc:  99.02; ppl:  1.14; xent: 0.13; lr: 0.00050; 4247/5086 tok/s;   7670 sec
+[2020-12-09 11:26:39,526 INFO] Step 19300/50000; acc:  99.13; ppl:  1.13; xent: 0.12; lr: 0.00050; 3955/4627 tok/s;   7714 sec
+[2020-12-09 11:27:21,631 INFO] Step 19400/50000; acc:  99.08; ppl:  1.13; xent: 0.12; lr: 0.00050; 4216/5024 tok/s;   7756 sec
+[2020-12-09 11:27:32,313 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:27:54,364 INFO] Step 19500/50000; acc:  99.29; ppl:  1.11; xent: 0.10; lr: 0.00050; 6009/7165 tok/s;   7789 sec
+[2020-12-09 11:28:25,577 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:28:28,363 INFO] Step 19600/50000; acc:  99.35; ppl:  1.12; xent: 0.11; lr: 0.00050; 5703/6785 tok/s;   7823 sec
+[2020-12-09 11:29:08,709 INFO] Step 19700/50000; acc:  99.18; ppl:  1.14; xent: 0.13; lr: 0.00050; 4530/5356 tok/s;   7863 sec
+[2020-12-09 11:29:47,492 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:29:51,429 INFO] Step 19800/50000; acc:  99.04; ppl:  1.15; xent: 0.14; lr: 0.00050; 3915/4781 tok/s;   7906 sec
+[2020-12-09 11:30:37,230 INFO] Step 19900/50000; acc:  99.12; ppl:  1.14; xent: 0.13; lr: 0.00050; 3887/4687 tok/s;   7952 sec
+[2020-12-09 11:31:19,361 INFO] Step 20000/50000; acc:  99.05; ppl:  1.14; xent: 0.13; lr: 0.00050; 4061/4783 tok/s;   7994 sec
+[2020-12-09 11:31:19,370 INFO] Saving checkpoint data/models/ta2knrnn_step_20000.pt
+[2020-12-09 11:32:07,729 INFO] Step 20100/50000; acc:  99.18; ppl:  1.13; xent: 0.12; lr: 0.00050; 3753/4436 tok/s;   8042 sec
+[2020-12-09 11:41:11,097 INFO] Missing transforms field for corpus_0 data, set to default: [].
+[2020-12-09 11:41:11,099 WARNING] Corpus corpus_0's weight should be given. We default it to 1 for you.
+[2020-12-09 11:41:11,099 INFO] Missing transforms field for valid data, set to default: [].
+[2020-12-09 11:41:11,100 INFO] Parsed 2 corpora from -data.
+[2020-12-09 11:41:11,100 INFO] Loading checkpoint from /content/drive/MyDrive/SATHYA-NMT/data/models/ta2knrnn_step_20000.pt
+[2020-12-09 11:41:11,550 INFO] Loading fields from checkpoint...
+[2020-12-09 11:41:11,550 INFO]  * src vocab size = 2149
+[2020-12-09 11:41:11,550 INFO]  * tgt vocab size = 2149
+[2020-12-09 11:41:11,556 INFO] Building model...
+[2020-12-09 11:41:16,271 INFO] NMTModel(
+  (encoder): RNNEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(2149, 1024, padding_idx=1)
+        )
+      )
+    )
+    (rnn): LSTM(1024, 512, dropout=0.3, bidirectional=True)
+  )
+  (decoder): InputFeedRNNDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(2149, 1024, padding_idx=1)
+        )
+      )
+    )
+    (dropout): Dropout(p=0.3, inplace=False)
+    (rnn): StackedLSTM(
+      (dropout): Dropout(p=0.3, inplace=False)
+      (layers): ModuleList(
+        (0): LSTMCell(2048, 1024)
+      )
+    )
+    (attn): GlobalAttention(
+      (linear_in): Linear(in_features=1024, out_features=1024, bias=False)
+      (linear_out): Linear(in_features=2048, out_features=1024, bias=False)
+    )
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=1024, out_features=2149, bias=True)
+    (1): Cast()
+    (2): LogSoftmax(dim=-1)
+  )
+)
+[2020-12-09 11:41:16,272 INFO] encoder: 8500224
+[2020-12-09 11:41:16,272 INFO] decoder: 15738981
+[2020-12-09 11:41:16,272 INFO] * number of parameters: 24239205
+[2020-12-09 11:41:18,228 INFO] Starting training on GPU: [0]
+[2020-12-09 11:41:18,229 INFO] Start training loop and validate every 50000 steps...
+[2020-12-09 11:41:18,230 INFO] corpus_0's transforms: TransformPipe()
+[2020-12-09 11:41:18,232 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:41:48,575 INFO] Step 20100/50000; acc:  99.43; ppl:  1.08; xent: 0.08; lr: 0.00050; 6855/8061 tok/s;     30 sec
+[2020-12-09 11:42:05,071 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:42:22,173 INFO] Step 20200/50000; acc:  99.24; ppl:  1.11; xent: 0.11; lr: 0.00050; 5363/6419 tok/s;     64 sec
+[2020-12-09 11:43:03,880 INFO] Step 20300/50000; acc:  99.17; ppl:  1.12; xent: 0.11; lr: 0.00050; 4330/5193 tok/s;    106 sec
+[2020-12-09 11:43:27,671 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:43:43,200 INFO] Step 20400/50000; acc:  99.16; ppl:  1.13; xent: 0.12; lr: 0.00050; 4496/5385 tok/s;    145 sec
+[2020-12-09 11:44:29,471 INFO] Step 20500/50000; acc:  99.16; ppl:  1.13; xent: 0.12; lr: 0.00050; 3686/4382 tok/s;    191 sec
+[2020-12-09 11:44:56,340 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:45:11,899 INFO] Step 20600/50000; acc:  99.20; ppl:  1.13; xent: 0.13; lr: 0.00050; 4354/5192 tok/s;    234 sec
+[2020-12-09 11:45:53,393 INFO] Step 20700/50000; acc:  98.97; ppl:  1.15; xent: 0.14; lr: 0.00050; 4339/5264 tok/s;    275 sec
+[2020-12-09 11:46:34,703 INFO] Step 20800/50000; acc:  99.17; ppl:  1.13; xent: 0.12; lr: 0.00050; 4604/5341 tok/s;    316 sec
+[2020-12-09 11:47:06,502 INFO] Step 20900/50000; acc:  99.34; ppl:  1.11; xent: 0.10; lr: 0.00050; 6295/7505 tok/s;    348 sec
+[2020-12-09 11:47:13,782 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:47:44,341 INFO] Step 21000/50000; acc:  99.16; ppl:  1.14; xent: 0.13; lr: 0.00050; 4897/5923 tok/s;    386 sec
+[2020-12-09 11:48:27,934 INFO] Step 21100/50000; acc:  99.11; ppl:  1.14; xent: 0.13; lr: 0.00050; 4116/4890 tok/s;    430 sec
+[2020-12-09 11:48:33,413 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:49:06,406 INFO] Step 21200/50000; acc:  99.14; ppl:  1.14; xent: 0.13; lr: 0.00050; 4861/5806 tok/s;    468 sec
+[2020-12-09 11:49:51,978 INFO] Step 21300/50000; acc:  99.12; ppl:  1.14; xent: 0.13; lr: 0.00050; 3765/4514 tok/s;    514 sec
+[2020-12-09 11:50:00,940 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:50:33,763 INFO] Step 21400/50000; acc:  99.09; ppl:  1.14; xent: 0.13; lr: 0.00050; 4236/5072 tok/s;    556 sec
+[2020-12-09 11:51:13,816 INFO] Step 21500/50000; acc:  98.98; ppl:  1.14; xent: 0.13; lr: 0.00050; 4325/5133 tok/s;    596 sec
+[2020-12-09 11:51:53,962 INFO] Step 21600/50000; acc:  99.31; ppl:  1.11; xent: 0.10; lr: 0.00050; 4789/5759 tok/s;    636 sec
+[2020-12-09 11:52:21,356 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:52:26,536 INFO] Step 21700/50000; acc:  99.35; ppl:  1.11; xent: 0.11; lr: 0.00050; 6141/7173 tok/s;    668 sec
+[2020-12-09 11:53:05,275 INFO] Step 21800/50000; acc:  99.10; ppl:  1.14; xent: 0.13; lr: 0.00050; 4835/5849 tok/s;    707 sec
+[2020-12-09 11:53:41,032 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:53:47,960 INFO] Step 21900/50000; acc:  99.08; ppl:  1.14; xent: 0.13; lr: 0.00050; 4115/4898 tok/s;    750 sec
+[2020-12-09 11:54:33,782 INFO] Step 22000/50000; acc:  99.15; ppl:  1.14; xent: 0.13; lr: 0.00050; 3780/4534 tok/s;    796 sec
+[2020-12-09 11:55:10,283 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:55:16,145 INFO] Step 22100/50000; acc:  99.10; ppl:  1.14; xent: 0.13; lr: 0.00050; 4099/4864 tok/s;    838 sec
+[2020-12-09 11:55:57,761 INFO] Step 22200/50000; acc:  99.06; ppl:  1.14; xent: 0.13; lr: 0.00050; 4174/5020 tok/s;    880 sec
+[2020-12-09 11:56:43,365 INFO] Step 22300/50000; acc:  98.96; ppl:  1.14; xent: 0.13; lr: 0.00050; 3823/4542 tok/s;    925 sec
+[2020-12-09 11:57:13,187 INFO] Step 22400/50000; acc:  99.31; ppl:  1.10; xent: 0.10; lr: 0.00050; 6940/8261 tok/s;    955 sec
+[2020-12-09 11:57:30,335 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:57:46,708 INFO] Step 22500/50000; acc:  99.26; ppl:  1.12; xent: 0.11; lr: 0.00050; 5406/6417 tok/s;    988 sec
+[2020-12-09 11:58:28,932 INFO] Step 22600/50000; acc:  99.19; ppl:  1.13; xent: 0.12; lr: 0.00050; 4360/5254 tok/s;   1031 sec
+[2020-12-09 11:58:50,748 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 11:59:10,326 INFO] Step 22700/50000; acc:  99.12; ppl:  1.13; xent: 0.13; lr: 0.00050; 4228/4982 tok/s;   1072 sec
+[2020-12-09 11:59:49,877 INFO] Step 22800/50000; acc:  99.13; ppl:  1.13; xent: 0.13; lr: 0.00050; 4506/5401 tok/s;   1112 sec
+[2020-12-09 12:00:18,002 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 12:00:35,563 INFO] Step 22900/50000; acc:  99.21; ppl:  1.13; xent: 0.12; lr: 0.00050; 3790/4474 tok/s;   1157 sec
+[2020-12-09 12:01:15,174 INFO] Step 23000/50000; acc:  98.97; ppl:  1.13; xent: 0.13; lr: 0.00050; 4562/5577 tok/s;   1197 sec
+[2020-12-09 12:01:56,610 INFO] Step 23100/50000; acc:  99.14; ppl:  1.12; xent: 0.11; lr: 0.00050; 4225/4956 tok/s;   1238 sec
+[2020-12-09 12:02:28,485 INFO] Step 23200/50000; acc:  99.38; ppl:  1.09; xent: 0.09; lr: 0.00050; 6192/7273 tok/s;   1270 sec
+[2020-12-09 12:02:38,185 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 12:03:09,326 INFO] Step 23300/50000; acc:  99.07; ppl:  1.12; xent: 0.12; lr: 0.00050; 4491/5328 tok/s;   1311 sec
+[2020-12-09 12:03:47,318 INFO] Step 23400/50000; acc:  99.13; ppl:  1.13; xent: 0.13; lr: 0.00050; 4758/5798 tok/s;   1349 sec
+[2020-12-09 12:03:54,632 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 12:04:26,311 INFO] Step 23500/50000; acc:  99.12; ppl:  1.14; xent: 0.13; lr: 0.00050; 4763/5696 tok/s;   1388 sec
+[2020-12-09 12:05:08,075 INFO] Step 23600/50000; acc:  99.07; ppl:  1.14; xent: 0.13; lr: 0.00050; 4154/4978 tok/s;   1430 sec
+[2020-12-09 12:05:21,158 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 12:05:52,857 INFO] Step 23700/50000; acc:  98.96; ppl:  1.14; xent: 0.13; lr: 0.00050; 3721/4420 tok/s;   1475 sec
+[2020-12-09 12:06:33,752 INFO] Step 23800/50000; acc:  98.95; ppl:  1.15; xent: 0.14; lr: 0.00050; 4445/5291 tok/s;   1516 sec
+[2020-12-09 12:07:07,768 INFO] Step 23900/50000; acc:  99.16; ppl:  1.12; xent: 0.11; lr: 0.00050; 5663/6734 tok/s;   1550 sec
+[2020-12-09 12:07:37,476 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 12:07:39,198 INFO] Step 24000/50000; acc:  99.32; ppl:  1.11; xent: 0.10; lr: 0.00050; 6353/7469 tok/s;   1581 sec
+[2020-12-09 12:07:39,205 INFO] Saving checkpoint data/models/ta2knrnn_step_24000.pt
+[2020-12-09 12:08:18,198 INFO] Step 24100/50000; acc:  99.22; ppl:  1.13; xent: 0.12; lr: 0.00050; 4855/5831 tok/s;   1620 sec
+[2020-12-09 12:08:55,906 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 12:08:59,890 INFO] Step 24200/50000; acc:  99.04; ppl:  1.13; xent: 0.13; lr: 0.00050; 4072/4982 tok/s;   1662 sec
+[2020-12-09 12:09:45,468 INFO] Step 24300/50000; acc:  99.18; ppl:  1.13; xent: 0.13; lr: 0.00050; 3800/4471 tok/s;   1707 sec
+[2020-12-09 12:10:22,661 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 12:10:24,737 INFO] Step 24400/50000; acc:  99.09; ppl:  1.13; xent: 0.12; lr: 0.00050; 4496/5401 tok/s;   1747 sec
+[2020-12-09 12:11:08,507 INFO] Step 24500/50000; acc:  98.99; ppl:  1.13; xent: 0.13; lr: 0.00050; 3919/4696 tok/s;   1790 sec
+[2020-12-09 12:11:49,182 INFO] Step 24600/50000; acc:  99.06; ppl:  1.13; xent: 0.12; lr: 0.00050; 4425/5255 tok/s;   1831 sec
+[2020-12-09 12:12:21,738 INFO] Step 24700/50000; acc:  99.31; ppl:  1.09; xent: 0.09; lr: 0.00050; 5817/6924 tok/s;   1864 sec
+[2020-12-09 12:12:43,793 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 12:12:55,052 INFO] Step 24800/50000; acc:  99.33; ppl:  1.10; xent: 0.09; lr: 0.00050; 5821/6820 tok/s;   1897 sec
+[2020-12-09 12:13:32,687 INFO] Step 24900/50000; acc:  99.23; ppl:  1.11; xent: 0.11; lr: 0.00050; 4876/5927 tok/s;   1934 sec
+[2020-12-09 12:14:02,999 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 12:14:15,724 INFO] Step 25000/50000; acc:  99.16; ppl:  1.12; xent: 0.12; lr: 0.00050; 3952/4702 tok/s;   1977 sec
+[2020-12-09 12:15:01,006 INFO] Step 25100/50000; acc:  99.16; ppl:  1.13; xent: 0.12; lr: 0.00050; 3844/4591 tok/s;   2023 sec
+[2020-12-09 12:15:29,697 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 12:15:40,241 INFO] Step 25200/50000; acc:  99.14; ppl:  1.12; xent: 0.11; lr: 0.00050; 4387/5234 tok/s;   2062 sec
+[2020-12-09 12:16:24,881 INFO] Step 25300/50000; acc:  99.07; ppl:  1.12; xent: 0.12; lr: 0.00050; 3881/4617 tok/s;   2107 sec
+[2020-12-09 12:17:03,687 INFO] Step 25400/50000; acc:  99.11; ppl:  1.12; xent: 0.11; lr: 0.00050; 4625/5534 tok/s;   2145 sec
+[2020-12-09 12:17:35,105 INFO] Step 25500/50000; acc:  99.29; ppl:  1.09; xent: 0.09; lr: 0.00050; 6229/7346 tok/s;   2177 sec
+[2020-12-09 12:17:51,035 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 12:18:09,396 INFO] Step 25600/50000; acc:  99.30; ppl:  1.10; xent: 0.10; lr: 0.00050; 5380/6443 tok/s;   2211 sec
+[2020-12-09 12:18:53,863 INFO] Step 25700/50000; acc:  99.22; ppl:  1.11; xent: 0.11; lr: 0.00050; 4068/4870 tok/s;   2256 sec
+[2020-12-09 12:19:11,215 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 12:19:31,868 INFO] Step 25800/50000; acc:  99.22; ppl:  1.12; xent: 0.11; lr: 0.00050; 4462/5403 tok/s;   2294 sec
+[2020-12-09 12:20:11,898 INFO] Step 25900/50000; acc:  99.24; ppl:  1.12; xent: 0.11; lr: 0.00050; 4450/5273 tok/s;   2334 sec
+[2020-12-09 12:20:36,843 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 12:20:56,650 INFO] Step 26000/50000; acc:  99.21; ppl:  1.12; xent: 0.11; lr: 0.00050; 3802/4489 tok/s;   2378 sec
+[2020-12-09 12:21:36,434 INFO] Step 26100/50000; acc:  99.10; ppl:  1.12; xent: 0.11; lr: 0.00050; 4491/5412 tok/s;   2418 sec
+[2020-12-09 12:22:15,668 INFO] Step 26200/50000; acc:  99.15; ppl:  1.11; xent: 0.10; lr: 0.00050; 4584/5428 tok/s;   2457 sec
+[2020-12-09 12:22:48,495 INFO] Step 26300/50000; acc:  99.31; ppl:  1.09; xent: 0.09; lr: 0.00050; 6087/7171 tok/s;   2490 sec
+[2020-12-09 12:22:57,648 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 12:23:24,535 INFO] Step 26400/50000; acc:  99.26; ppl:  1.10; xent: 0.10; lr: 0.00050; 4689/5607 tok/s;   2526 sec
+[2020-12-09 12:24:07,122 INFO] Step 26500/50000; acc:  99.25; ppl:  1.11; xent: 0.10; lr: 0.00050; 4268/5156 tok/s;   2569 sec
+[2020-12-09 12:24:17,778 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 12:24:50,600 INFO] Step 26600/50000; acc:  99.16; ppl:  1.12; xent: 0.11; lr: 0.00050; 3998/4733 tok/s;   2612 sec
+[2020-12-09 12:25:30,241 INFO] Step 26700/50000; acc:  99.22; ppl:  1.12; xent: 0.12; lr: 0.00050; 4648/5629 tok/s;   2652 sec
+[2020-12-09 12:25:39,977 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 12:26:16,700 INFO] Step 26800/50000; acc:  99.16; ppl:  1.12; xent: 0.11; lr: 0.00050; 3859/4534 tok/s;   2698 sec
+[2020-12-09 12:26:56,254 INFO] Step 26900/50000; acc:  99.06; ppl:  1.12; xent: 0.11; lr: 0.00050; 4530/5472 tok/s;   2738 sec
+[2020-12-09 12:27:30,420 INFO] Step 27000/50000; acc:  99.21; ppl:  1.10; xent: 0.10; lr: 0.00050; 5274/6206 tok/s;   2772 sec
+[2020-12-09 12:28:02,059 INFO] Step 27100/50000; acc:  99.22; ppl:  1.10; xent: 0.09; lr: 0.00050; 6087/7251 tok/s;   2804 sec
+[2020-12-09 12:28:02,772 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 12:28:40,574 INFO] Step 27200/50000; acc:  99.35; ppl:  1.11; xent: 0.10; lr: 0.00050; 4659/5586 tok/s;   2842 sec
+[2020-12-09 12:29:19,249 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 12:29:22,665 INFO] Step 27300/50000; acc:  99.20; ppl:  1.11; xent: 0.10; lr: 0.00050; 4396/5294 tok/s;   2884 sec
+[2020-12-09 12:30:02,327 INFO] Step 27400/50000; acc:  99.29; ppl:  1.12; xent: 0.11; lr: 0.00050; 4647/5498 tok/s;   2924 sec
+[2020-12-09 12:30:44,943 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 12:30:46,642 INFO] Step 27500/50000; acc:  99.13; ppl:  1.12; xent: 0.12; lr: 0.00050; 3731/4481 tok/s;   2968 sec
+[2020-12-09 12:31:32,169 INFO] Step 27600/50000; acc:  99.17; ppl:  1.12; xent: 0.11; lr: 0.00050; 4000/4686 tok/s;   3014 sec
+[2020-12-09 12:32:12,737 INFO] Step 27700/50000; acc:  99.02; ppl:  1.12; xent: 0.12; lr: 0.00050; 4172/5080 tok/s;   3055 sec
+[2020-12-09 12:32:51,544 INFO] Step 27800/50000; acc:  99.24; ppl:  1.10; xent: 0.09; lr: 0.00050; 4745/5615 tok/s;   3093 sec
+[2020-12-09 12:33:17,116 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 12:33:24,184 INFO] Step 27900/50000; acc:  99.25; ppl:  1.10; xent: 0.09; lr: 0.00050; 5991/7072 tok/s;   3126 sec
+[2020-12-09 12:34:01,840 INFO] Step 28000/50000; acc:  99.30; ppl:  1.11; xent: 0.10; lr: 0.00050; 5075/6088 tok/s;   3164 sec
+[2020-12-09 12:34:01,847 INFO] Saving checkpoint data/models/ta2knrnn_step_28000.pt
+[2020-12-09 12:34:24,234 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 12:34:43,723 INFO] Step 28100/50000; acc:  99.25; ppl:  1.11; xent: 0.11; lr: 0.00050; 4298/5201 tok/s;   3205 sec
+[2020-12-09 12:35:23,541 INFO] Step 28200/50000; acc:  99.26; ppl:  1.12; xent: 0.11; lr: 0.00050; 4703/5594 tok/s;   3245 sec
+[2020-12-09 12:35:49,879 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 12:36:10,872 INFO] Step 28300/50000; acc:  99.15; ppl:  1.12; xent: 0.11; lr: 0.00050; 3456/4103 tok/s;   3293 sec
+[2020-12-09 12:36:48,734 INFO] Step 28400/50000; acc:  99.08; ppl:  1.12; xent: 0.11; lr: 0.00050; 4816/5835 tok/s;   3331 sec
+[2020-12-09 12:37:27,703 INFO] Step 28500/50000; acc:  99.12; ppl:  1.11; xent: 0.11; lr: 0.00050; 4568/5395 tok/s;   3369 sec
+[2020-12-09 12:38:03,423 INFO] Step 28600/50000; acc:  99.25; ppl:  1.09; xent: 0.09; lr: 0.00050; 5123/6040 tok/s;   3405 sec
+[2020-12-09 12:38:25,346 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 12:38:41,843 INFO] Step 28700/50000; acc:  99.27; ppl:  1.10; xent: 0.09; lr: 0.00050; 4719/5707 tok/s;   3444 sec
+[2020-12-09 12:39:17,192 INFO] Step 28800/50000; acc:  99.31; ppl:  1.10; xent: 0.10; lr: 0.00050; 5528/6545 tok/s;   3479 sec
+[2020-12-09 12:39:29,573 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 12:39:58,373 INFO] Step 28900/50000; acc:  99.23; ppl:  1.12; xent: 0.11; lr: 0.00050; 4507/5434 tok/s;   3520 sec
+[2020-12-09 12:40:40,871 INFO] Step 29000/50000; acc:  99.22; ppl:  1.12; xent: 0.11; lr: 0.00050; 4137/4879 tok/s;   3563 sec
+[2020-12-09 12:40:53,634 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 12:41:21,091 INFO] Step 29100/50000; acc:  99.07; ppl:  1.12; xent: 0.11; lr: 0.00050; 4252/5063 tok/s;   3603 sec
+[2020-12-09 12:56:24,793 INFO] Missing transforms field for corpus_0 data, set to default: [].
+[2020-12-09 12:56:24,795 WARNING] Corpus corpus_0's weight should be given. We default it to 1 for you.
+[2020-12-09 12:56:24,795 INFO] Missing transforms field for valid data, set to default: [].
+[2020-12-09 12:56:24,795 INFO] Parsed 2 corpora from -data.
+[2020-12-09 12:56:24,796 INFO] Loading checkpoint from /content/drive/MyDrive/SATHYA-NMT/data/models/ta2knrnn_step_28000.pt
+[2020-12-09 12:56:25,231 INFO] Loading fields from checkpoint...
+[2020-12-09 12:56:25,232 INFO]  * src vocab size = 2149
+[2020-12-09 12:56:25,232 INFO]  * tgt vocab size = 2149
+[2020-12-09 12:56:25,238 INFO] Building model...
+[2020-12-09 12:56:29,825 INFO] NMTModel(
+  (encoder): RNNEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(2149, 1024, padding_idx=1)
+        )
+      )
+    )
+    (rnn): LSTM(1024, 512, dropout=0.3, bidirectional=True)
+  )
+  (decoder): InputFeedRNNDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(2149, 1024, padding_idx=1)
+        )
+      )
+    )
+    (dropout): Dropout(p=0.3, inplace=False)
+    (rnn): StackedLSTM(
+      (dropout): Dropout(p=0.3, inplace=False)
+      (layers): ModuleList(
+        (0): LSTMCell(2048, 1024)
+      )
+    )
+    (attn): GlobalAttention(
+      (linear_in): Linear(in_features=1024, out_features=1024, bias=False)
+      (linear_out): Linear(in_features=2048, out_features=1024, bias=False)
+    )
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=1024, out_features=2149, bias=True)
+    (1): Cast()
+    (2): LogSoftmax(dim=-1)
+  )
+)
+[2020-12-09 12:56:29,826 INFO] encoder: 8500224
+[2020-12-09 12:56:29,826 INFO] decoder: 15738981
+[2020-12-09 12:56:29,826 INFO] * number of parameters: 24239205
+[2020-12-09 12:56:31,744 INFO] Starting training on GPU: [0]
+[2020-12-09 12:56:31,744 INFO] Start training loop and validate every 50000 steps...
+[2020-12-09 12:56:31,745 INFO] corpus_0's transforms: TransformPipe()
+[2020-12-09 12:56:31,746 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 12:57:01,752 INFO] Step 28100/50000; acc:  99.44; ppl:  1.07; xent: 0.07; lr: 0.00050; 6932/8152 tok/s;     30 sec
+[2020-12-09 12:57:17,994 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 12:57:34,838 INFO] Step 28200/50000; acc:  99.35; ppl:  1.09; xent: 0.09; lr: 0.00050; 5446/6518 tok/s;     63 sec
+[2020-12-09 12:58:16,007 INFO] Step 28300/50000; acc:  99.24; ppl:  1.10; xent: 0.09; lr: 0.00050; 4387/5260 tok/s;    104 sec
+[2020-12-09 12:58:39,513 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 12:58:54,697 INFO] Step 28400/50000; acc:  99.22; ppl:  1.10; xent: 0.10; lr: 0.00050; 4569/5473 tok/s;    143 sec
+[2020-12-09 12:59:40,178 INFO] Step 28500/50000; acc:  99.24; ppl:  1.10; xent: 0.10; lr: 0.00050; 3750/4458 tok/s;    188 sec
+[2020-12-09 13:00:06,572 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:00:21,748 INFO] Step 28600/50000; acc:  99.27; ppl:  1.11; xent: 0.10; lr: 0.00050; 4444/5299 tok/s;    230 sec
+[2020-12-09 13:01:02,278 INFO] Step 28700/50000; acc:  99.07; ppl:  1.11; xent: 0.11; lr: 0.00050; 4442/5389 tok/s;    271 sec
+[2020-12-09 13:01:42,583 INFO] Step 28800/50000; acc:  99.25; ppl:  1.10; xent: 0.10; lr: 0.00050; 4719/5475 tok/s;    311 sec
+[2020-12-09 13:02:13,659 INFO] Step 28900/50000; acc:  99.40; ppl:  1.09; xent: 0.08; lr: 0.00050; 6441/7680 tok/s;    342 sec
+[2020-12-09 13:02:20,749 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:02:50,529 INFO] Step 29000/50000; acc:  99.25; ppl:  1.11; xent: 0.11; lr: 0.00050; 5025/6079 tok/s;    379 sec
+[2020-12-09 13:03:32,962 INFO] Step 29100/50000; acc:  99.21; ppl:  1.11; xent: 0.11; lr: 0.00050; 4228/5024 tok/s;    421 sec
+[2020-12-09 13:03:38,320 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:04:10,489 INFO] Step 29200/50000; acc:  99.22; ppl:  1.11; xent: 0.11; lr: 0.00050; 4983/5952 tok/s;    459 sec
+[2020-12-09 13:04:54,794 INFO] Step 29300/50000; acc:  99.22; ppl:  1.11; xent: 0.11; lr: 0.00050; 3873/4643 tok/s;    503 sec
+[2020-12-09 13:05:03,508 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:05:35,287 INFO] Step 29400/50000; acc:  99.18; ppl:  1.11; xent: 0.11; lr: 0.00050; 4371/5234 tok/s;    544 sec
+[2020-12-09 13:06:14,182 INFO] Step 29500/50000; acc:  99.06; ppl:  1.12; xent: 0.11; lr: 0.00050; 4454/5286 tok/s;    582 sec
+[2020-12-09 13:06:53,181 INFO] Step 29600/50000; acc:  99.37; ppl:  1.09; xent: 0.09; lr: 0.00050; 4930/5928 tok/s;    621 sec
+[2020-12-09 13:07:19,908 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:07:24,837 INFO] Step 29700/50000; acc:  99.39; ppl:  1.09; xent: 0.09; lr: 0.00050; 6319/7381 tok/s;    653 sec
+[2020-12-09 13:08:02,365 INFO] Step 29800/50000; acc:  99.18; ppl:  1.12; xent: 0.11; lr: 0.00050; 4991/6037 tok/s;    691 sec
+[2020-12-09 13:08:37,004 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:08:43,684 INFO] Step 29900/50000; acc:  99.17; ppl:  1.12; xent: 0.11; lr: 0.00050; 4251/5060 tok/s;    732 sec
+[2020-12-09 13:09:28,198 INFO] Step 30000/50000; acc:  99.26; ppl:  1.11; xent: 0.11; lr: 0.00050; 3892/4667 tok/s;    776 sec
+[2020-12-09 13:10:03,608 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:10:09,353 INFO] Step 30100/50000; acc:  99.18; ppl:  1.11; xent: 0.11; lr: 0.00050; 4220/5007 tok/s;    818 sec
+[2020-12-09 13:10:50,086 INFO] Step 30200/50000; acc:  99.16; ppl:  1.11; xent: 0.11; lr: 0.00050; 4265/5128 tok/s;    858 sec
+[2020-12-09 13:11:34,934 INFO] Step 30300/50000; acc:  99.08; ppl:  1.11; xent: 0.11; lr: 0.00050; 3888/4618 tok/s;    903 sec
+[2020-12-09 13:12:04,380 INFO] Step 30400/50000; acc:  99.35; ppl:  1.08; xent: 0.08; lr: 0.00050; 7029/8367 tok/s;    933 sec
+[2020-12-09 13:12:21,379 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:12:37,466 INFO] Step 30500/50000; acc:  99.31; ppl:  1.10; xent: 0.10; lr: 0.00050; 5477/6502 tok/s;    966 sec
+[2020-12-09 13:13:19,114 INFO] Step 30600/50000; acc:  99.26; ppl:  1.11; xent: 0.10; lr: 0.00050; 4420/5327 tok/s;   1007 sec
+[2020-12-09 13:13:40,641 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:14:00,016 INFO] Step 30700/50000; acc:  99.20; ppl:  1.11; xent: 0.11; lr: 0.00050; 4279/5042 tok/s;   1048 sec
+[2020-12-09 13:14:39,280 INFO] Step 30800/50000; acc:  99.20; ppl:  1.11; xent: 0.11; lr: 0.00050; 4539/5441 tok/s;   1088 sec
+[2020-12-09 13:15:07,263 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:15:24,729 INFO] Step 30900/50000; acc:  99.26; ppl:  1.11; xent: 0.10; lr: 0.00050; 3810/4498 tok/s;   1133 sec
+[2020-12-09 13:16:04,016 INFO] Step 31000/50000; acc:  99.05; ppl:  1.12; xent: 0.11; lr: 0.00050; 4600/5623 tok/s;   1172 sec
+[2020-12-09 13:16:45,201 INFO] Step 31100/50000; acc:  99.20; ppl:  1.10; xent: 0.10; lr: 0.00050; 4251/4987 tok/s;   1213 sec
+[2020-12-09 13:17:16,880 INFO] Step 31200/50000; acc:  99.40; ppl:  1.08; xent: 0.08; lr: 0.00050; 6230/7318 tok/s;   1245 sec
+[2020-12-09 13:17:26,518 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:17:57,253 INFO] Step 31300/50000; acc:  99.20; ppl:  1.10; xent: 0.10; lr: 0.00050; 4543/5390 tok/s;   1286 sec
+[2020-12-09 13:18:35,009 INFO] Step 31400/50000; acc:  99.16; ppl:  1.12; xent: 0.11; lr: 0.00050; 4788/5834 tok/s;   1323 sec
+[2020-12-09 13:18:42,311 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:19:13,816 INFO] Step 31500/50000; acc:  99.17; ppl:  1.12; xent: 0.11; lr: 0.00050; 4786/5723 tok/s;   1362 sec
+[2020-12-09 13:19:55,408 INFO] Step 31600/50000; acc:  99.21; ppl:  1.12; xent: 0.11; lr: 0.00050; 4171/4998 tok/s;   1404 sec
+[2020-12-09 13:20:08,420 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:20:40,100 INFO] Step 31700/50000; acc:  99.17; ppl:  1.11; xent: 0.11; lr: 0.00050; 3728/4429 tok/s;   1448 sec
+[2020-12-09 13:21:20,886 INFO] Step 31800/50000; acc:  99.09; ppl:  1.12; xent: 0.11; lr: 0.00050; 4457/5306 tok/s;   1489 sec
+[2020-12-09 13:21:54,832 INFO] Step 31900/50000; acc:  99.25; ppl:  1.09; xent: 0.09; lr: 0.00050; 5674/6748 tok/s;   1523 sec
+[2020-12-09 13:22:24,393 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:22:26,117 INFO] Step 32000/50000; acc:  99.35; ppl:  1.09; xent: 0.08; lr: 0.00050; 6382/7504 tok/s;   1554 sec
+[2020-12-09 13:22:26,124 INFO] Saving checkpoint data/models/ta2knrnn_step_32000.pt
+[2020-12-09 13:23:04,838 INFO] Step 32100/50000; acc:  99.27; ppl:  1.11; xent: 0.10; lr: 0.00050; 4890/5873 tok/s;   1593 sec
+[2020-12-09 13:23:42,368 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:23:46,358 INFO] Step 32200/50000; acc:  99.18; ppl:  1.11; xent: 0.10; lr: 0.00050; 4089/5003 tok/s;   1635 sec
+[2020-12-09 13:24:31,936 INFO] Step 32300/50000; acc:  99.32; ppl:  1.11; xent: 0.10; lr: 0.00050; 3800/4471 tok/s;   1680 sec
+[2020-12-09 13:25:09,189 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:25:11,267 INFO] Step 32400/50000; acc:  99.17; ppl:  1.11; xent: 0.10; lr: 0.00050; 4489/5393 tok/s;   1720 sec
+[2020-12-09 13:25:55,041 INFO] Step 32500/50000; acc:  99.15; ppl:  1.11; xent: 0.10; lr: 0.00050; 3919/4695 tok/s;   1763 sec
+[2020-12-09 13:26:35,564 INFO] Step 32600/50000; acc:  99.13; ppl:  1.11; xent: 0.10; lr: 0.00050; 4442/5275 tok/s;   1804 sec
+[2020-12-09 13:27:08,176 INFO] Step 32700/50000; acc:  99.34; ppl:  1.08; xent: 0.08; lr: 0.00050; 5807/6913 tok/s;   1836 sec
+[2020-12-09 13:27:30,189 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:27:41,463 INFO] Step 32800/50000; acc:  99.35; ppl:  1.08; xent: 0.08; lr: 0.00050; 5826/6826 tok/s;   1870 sec
+[2020-12-09 13:28:19,056 INFO] Step 32900/50000; acc:  99.26; ppl:  1.10; xent: 0.09; lr: 0.00050; 4882/5934 tok/s;   1907 sec
+[2020-12-09 13:28:49,308 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:29:01,994 INFO] Step 33000/50000; acc:  99.26; ppl:  1.10; xent: 0.10; lr: 0.00050; 3961/4713 tok/s;   1950 sec
+[2020-12-09 13:29:47,326 INFO] Step 33100/50000; acc:  99.26; ppl:  1.11; xent: 0.10; lr: 0.00050; 3840/4586 tok/s;   1996 sec
+[2020-12-09 13:30:15,967 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:30:26,433 INFO] Step 33200/50000; acc:  99.19; ppl:  1.10; xent: 0.10; lr: 0.00050; 4401/5251 tok/s;   2035 sec
+[2020-12-09 13:31:11,065 INFO] Step 33300/50000; acc:  99.14; ppl:  1.11; xent: 0.10; lr: 0.00050; 3881/4618 tok/s;   2079 sec
+[2020-12-09 13:31:49,719 INFO] Step 33400/50000; acc:  99.13; ppl:  1.11; xent: 0.10; lr: 0.00050; 4643/5556 tok/s;   2118 sec
+[2020-12-09 13:32:21,185 INFO] Step 33500/50000; acc:  99.31; ppl:  1.08; xent: 0.08; lr: 0.00050; 6219/7335 tok/s;   2149 sec
+[2020-12-09 13:32:37,165 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:32:55,540 INFO] Step 33600/50000; acc:  99.32; ppl:  1.09; xent: 0.09; lr: 0.00050; 5370/6431 tok/s;   2184 sec
+[2020-12-09 13:33:39,852 INFO] Step 33700/50000; acc:  99.25; ppl:  1.10; xent: 0.09; lr: 0.00050; 4082/4887 tok/s;   2228 sec
+[2020-12-09 13:33:57,193 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:34:17,741 INFO] Step 33800/50000; acc:  99.25; ppl:  1.10; xent: 0.10; lr: 0.00050; 4476/5419 tok/s;   2266 sec
+[2020-12-09 13:34:57,888 INFO] Step 33900/50000; acc:  99.28; ppl:  1.10; xent: 0.10; lr: 0.00050; 4436/5257 tok/s;   2306 sec
+[2020-12-09 13:35:22,874 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:35:42,791 INFO] Step 34000/50000; acc:  99.23; ppl:  1.11; xent: 0.10; lr: 0.00050; 3790/4474 tok/s;   2351 sec
+[2020-12-09 13:36:22,822 INFO] Step 34100/50000; acc:  99.11; ppl:  1.11; xent: 0.10; lr: 0.00050; 4463/5378 tok/s;   2391 sec
+[2020-12-09 13:37:02,014 INFO] Step 34200/50000; acc:  99.18; ppl:  1.10; xent: 0.09; lr: 0.00050; 4589/5434 tok/s;   2430 sec
+[2020-12-09 13:37:34,688 INFO] Step 34300/50000; acc:  99.33; ppl:  1.08; xent: 0.08; lr: 0.00050; 6116/7205 tok/s;   2463 sec
+[2020-12-09 13:37:43,828 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:38:10,712 INFO] Step 34400/50000; acc:  99.29; ppl:  1.09; xent: 0.09; lr: 0.00050; 4691/5609 tok/s;   2499 sec
+[2020-12-09 13:38:53,367 INFO] Step 34500/50000; acc:  99.26; ppl:  1.10; xent: 0.09; lr: 0.00050; 4261/5148 tok/s;   2542 sec
+[2020-12-09 13:39:03,965 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:39:36,567 INFO] Step 34600/50000; acc:  99.19; ppl:  1.11; xent: 0.10; lr: 0.00050; 4024/4763 tok/s;   2585 sec
+[2020-12-09 13:40:16,038 INFO] Step 34700/50000; acc:  99.24; ppl:  1.11; xent: 0.10; lr: 0.00050; 4668/5653 tok/s;   2624 sec
+[2020-12-09 13:40:25,707 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:41:02,520 INFO] Step 34800/50000; acc:  99.17; ppl:  1.11; xent: 0.10; lr: 0.00050; 3858/4532 tok/s;   2671 sec
+[2020-12-09 13:41:42,087 INFO] Step 34900/50000; acc:  99.07; ppl:  1.11; xent: 0.11; lr: 0.00050; 4529/5470 tok/s;   2710 sec
+[2020-12-09 13:42:15,926 INFO] Step 35000/50000; acc:  99.24; ppl:  1.09; xent: 0.09; lr: 0.00050; 5325/6265 tok/s;   2744 sec
+[2020-12-09 13:42:47,607 INFO] Step 35100/50000; acc:  99.24; ppl:  1.09; xent: 0.08; lr: 0.00050; 6079/7241 tok/s;   2776 sec
+[2020-12-09 13:42:48,323 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:43:26,089 INFO] Step 35200/50000; acc:  99.35; ppl:  1.10; xent: 0.09; lr: 0.00050; 4663/5591 tok/s;   2814 sec
+[2020-12-09 13:44:04,367 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:44:07,727 INFO] Step 35300/50000; acc:  99.19; ppl:  1.10; xent: 0.10; lr: 0.00050; 4444/5352 tok/s;   2856 sec
+[2020-12-09 13:44:47,142 INFO] Step 35400/50000; acc:  99.30; ppl:  1.11; xent: 0.10; lr: 0.00050; 4676/5532 tok/s;   2895 sec
+[2020-12-09 13:45:29,805 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:45:31,463 INFO] Step 35500/50000; acc:  99.10; ppl:  1.11; xent: 0.11; lr: 0.00050; 3730/4480 tok/s;   2940 sec
+[2020-12-09 13:46:16,853 INFO] Step 35600/50000; acc:  99.14; ppl:  1.11; xent: 0.11; lr: 0.00050; 4013/4700 tok/s;   2985 sec
+[2020-12-09 13:46:57,362 INFO] Step 35700/50000; acc:  99.03; ppl:  1.11; xent: 0.11; lr: 0.00050; 4178/5088 tok/s;   3026 sec
+[2020-12-09 13:47:36,032 INFO] Step 35800/50000; acc:  99.25; ppl:  1.09; xent: 0.09; lr: 0.00050; 4762/5635 tok/s;   3064 sec
+[2020-12-09 13:48:01,702 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:48:08,835 INFO] Step 35900/50000; acc:  99.26; ppl:  1.09; xent: 0.08; lr: 0.00050; 5961/7036 tok/s;   3097 sec
+[2020-12-09 13:48:46,501 INFO] Step 36000/50000; acc:  99.31; ppl:  1.10; xent: 0.09; lr: 0.00050; 5073/6086 tok/s;   3135 sec
+[2020-12-09 13:48:46,509 INFO] Saving checkpoint data/models/ta2knrnn_step_36000.pt
+[2020-12-09 13:49:08,984 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:49:28,548 INFO] Step 36100/50000; acc:  99.21; ppl:  1.11; xent: 0.10; lr: 0.00050; 4281/5181 tok/s;   3177 sec
+[2020-12-09 13:50:08,093 INFO] Step 36200/50000; acc:  99.26; ppl:  1.11; xent: 0.11; lr: 0.00050; 4735/5632 tok/s;   3216 sec
+[2020-12-09 13:50:34,399 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:50:55,365 INFO] Step 36300/50000; acc:  99.13; ppl:  1.11; xent: 0.11; lr: 0.00050; 3460/4108 tok/s;   3264 sec
+[2020-12-09 13:51:33,117 INFO] Step 36400/50000; acc:  99.11; ppl:  1.11; xent: 0.11; lr: 0.00050; 4830/5852 tok/s;   3301 sec
+[2020-12-09 13:52:12,039 INFO] Step 36500/50000; acc:  99.13; ppl:  1.10; xent: 0.10; lr: 0.00050; 4573/5402 tok/s;   3340 sec
+[2020-12-09 13:52:47,858 INFO] Step 36600/50000; acc:  99.26; ppl:  1.09; xent: 0.08; lr: 0.00050; 5108/6023 tok/s;   3376 sec
+[2020-12-09 13:53:09,758 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:53:26,384 INFO] Step 36700/50000; acc:  99.24; ppl:  1.09; xent: 0.09; lr: 0.00050; 4706/5691 tok/s;   3415 sec
+[2020-12-09 13:54:01,801 INFO] Step 36800/50000; acc:  99.33; ppl:  1.09; xent: 0.09; lr: 0.00050; 5517/6532 tok/s;   3450 sec
+[2020-12-09 13:54:14,240 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:54:43,170 INFO] Step 36900/50000; acc:  99.25; ppl:  1.11; xent: 0.10; lr: 0.00050; 4486/5409 tok/s;   3491 sec
+[2020-12-09 13:55:25,743 INFO] Step 37000/50000; acc:  99.17; ppl:  1.11; xent: 0.11; lr: 0.00050; 4130/4871 tok/s;   3534 sec
+[2020-12-09 13:55:38,532 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:56:06,143 INFO] Step 37100/50000; acc:  99.10; ppl:  1.11; xent: 0.10; lr: 0.00050; 4233/5041 tok/s;   3574 sec
+[2020-12-09 13:56:51,062 INFO] Step 37200/50000; acc:  99.02; ppl:  1.12; xent: 0.11; lr: 0.00050; 3865/4617 tok/s;   3619 sec
+[2020-12-09 13:57:28,067 INFO] Step 37300/50000; acc:  99.17; ppl:  1.10; xent: 0.10; lr: 0.00050; 4969/5936 tok/s;   3656 sec
+[2020-12-09 13:58:05,256 INFO] Step 37400/50000; acc:  99.03; ppl:  1.12; xent: 0.11; lr: 0.00050; 5061/5958 tok/s;   3694 sec
+[2020-12-09 13:58:11,286 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:58:40,075 INFO] Step 37500/50000; acc:  99.20; ppl:  1.11; xent: 0.11; lr: 0.00050; 5491/6618 tok/s;   3728 sec
+[2020-12-09 13:59:16,514 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 13:59:18,605 INFO] Step 37600/50000; acc:  99.26; ppl:  1.11; xent: 0.10; lr: 0.00050; 4986/5965 tok/s;   3767 sec
+[2020-12-09 13:59:59,366 INFO] Step 37700/50000; acc:  99.21; ppl:  1.12; xent: 0.11; lr: 0.00050; 4381/5212 tok/s;   3808 sec
+[2020-12-09 14:00:42,950 INFO] Step 37800/50000; acc:  99.04; ppl:  1.12; xent: 0.11; lr: 0.00050; 3921/4676 tok/s;   3851 sec
+[2020-12-09 14:00:43,617 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:01:24,440 INFO] Step 37900/50000; acc:  99.11; ppl:  1.11; xent: 0.11; lr: 0.00050; 4248/5068 tok/s;   3893 sec
+[2020-12-09 14:02:09,430 INFO] Step 38000/50000; acc:  98.97; ppl:  1.12; xent: 0.11; lr: 0.00050; 3849/4613 tok/s;   3938 sec
+[2020-12-09 14:02:44,447 INFO] Step 38100/50000; acc:  99.29; ppl:  1.09; xent: 0.08; lr: 0.00050; 5378/6434 tok/s;   3973 sec
+[2020-12-09 14:03:19,600 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:03:23,643 INFO] Step 38200/50000; acc:  99.12; ppl:  1.09; xent: 0.09; lr: 0.00050; 4546/5370 tok/s;   4012 sec
+[2020-12-09 14:04:00,530 INFO] Step 38300/50000; acc:  99.32; ppl:  1.09; xent: 0.08; lr: 0.00050; 5360/6424 tok/s;   4049 sec
+[2020-12-09 14:04:25,203 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:04:38,362 INFO] Step 38400/50000; acc:  99.40; ppl:  1.09; xent: 0.09; lr: 0.00050; 4887/5855 tok/s;   4087 sec
+[2020-12-09 14:05:23,269 INFO] Step 38500/50000; acc:  99.17; ppl:  1.10; xent: 0.10; lr: 0.00050; 4017/4766 tok/s;   4132 sec
+[2020-12-09 14:05:49,602 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:06:03,825 INFO] Step 38600/50000; acc:  99.20; ppl:  1.10; xent: 0.10; lr: 0.00050; 4348/5152 tok/s;   4172 sec
+[2020-12-09 14:06:49,509 INFO] Step 38700/50000; acc:  99.09; ppl:  1.10; xent: 0.10; lr: 0.00050; 3846/4583 tok/s;   4218 sec
+[2020-12-09 14:07:31,974 INFO] Step 38800/50000; acc:  99.20; ppl:  1.10; xent: 0.09; lr: 0.00050; 4152/4980 tok/s;   4260 sec
+[2020-12-09 14:08:06,739 INFO] Step 38900/50000; acc:  99.26; ppl:  1.08; xent: 0.08; lr: 0.00050; 5270/6326 tok/s;   4295 sec
+[2020-12-09 14:08:27,030 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:08:43,441 INFO] Step 39000/50000; acc:  99.26; ppl:  1.08; xent: 0.08; lr: 0.00050; 4969/5942 tok/s;   4332 sec
+[2020-12-09 14:09:20,563 INFO] Step 39100/50000; acc:  99.39; ppl:  1.08; xent: 0.08; lr: 0.00050; 5232/6215 tok/s;   4369 sec
+[2020-12-09 14:09:32,468 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:09:58,987 INFO] Step 39200/50000; acc:  99.30; ppl:  1.09; xent: 0.09; lr: 0.00050; 4768/5629 tok/s;   4407 sec
+[2020-12-09 14:10:42,046 INFO] Step 39300/50000; acc:  99.24; ppl:  1.10; xent: 0.10; lr: 0.00050; 3908/4694 tok/s;   4450 sec
+[2020-12-09 14:10:59,401 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:11:23,690 INFO] Step 39400/50000; acc:  99.20; ppl:  1.10; xent: 0.10; lr: 0.00050; 4513/5449 tok/s;   4492 sec
+[2020-12-09 14:12:06,490 INFO] Step 39500/50000; acc:  99.12; ppl:  1.10; xent: 0.10; lr: 0.00050; 4420/5263 tok/s;   4535 sec
+[2020-12-09 14:12:49,894 INFO] Step 39600/50000; acc:  99.20; ppl:  1.09; xent: 0.09; lr: 0.00050; 3881/4578 tok/s;   4578 sec
+[2020-12-09 14:13:27,427 INFO] Step 39700/50000; acc:  99.22; ppl:  1.08; xent: 0.08; lr: 0.00050; 5042/6004 tok/s;   4616 sec
+[2020-12-09 14:13:36,905 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:14:03,389 INFO] Step 39800/50000; acc:  99.34; ppl:  1.08; xent: 0.08; lr: 0.00050; 5184/6238 tok/s;   4652 sec
+[2020-12-09 14:14:39,733 INFO] Step 39900/50000; acc:  99.38; ppl:  1.09; xent: 0.08; lr: 0.00050; 5223/6194 tok/s;   4688 sec
+[2020-12-09 14:14:40,240 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:15:25,361 INFO] Step 40000/50000; acc:  99.26; ppl:  1.10; xent: 0.10; lr: 0.00050; 3748/4486 tok/s;   4734 sec
+[2020-12-09 14:15:25,370 INFO] Saving checkpoint data/models/ta2knrnn_step_40000.pt
+[2020-12-09 14:16:05,877 INFO] Step 40100/50000; acc:  99.20; ppl:  1.10; xent: 0.10; lr: 0.00050; 4314/5134 tok/s;   4774 sec
+[2020-12-09 14:16:08,532 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:16:47,208 INFO] Step 40200/50000; acc:  99.25; ppl:  1.10; xent: 0.10; lr: 0.00050; 4363/5149 tok/s;   4815 sec
+[2020-12-09 14:17:32,326 INFO] Step 40300/50000; acc:  99.04; ppl:  1.10; xent: 0.10; lr: 0.00050; 3855/4635 tok/s;   4861 sec
+[2020-12-09 14:18:10,047 INFO] Step 40400/50000; acc:  99.25; ppl:  1.09; xent: 0.08; lr: 0.00050; 5021/6033 tok/s;   4898 sec
+[2020-12-09 14:18:49,885 INFO] Step 40500/50000; acc:  99.21; ppl:  1.09; xent: 0.08; lr: 0.00050; 4284/5049 tok/s;   4938 sec
+[2020-12-09 14:18:51,248 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:19:25,758 INFO] Step 40600/50000; acc:  99.38; ppl:  1.08; xent: 0.08; lr: 0.00050; 5462/6573 tok/s;   4974 sec
+[2020-12-09 14:19:52,131 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:20:03,025 INFO] Step 40700/50000; acc:  99.36; ppl:  1.09; xent: 0.09; lr: 0.00050; 5036/5980 tok/s;   5011 sec
+[2020-12-09 14:20:45,251 INFO] Step 40800/50000; acc:  99.19; ppl:  1.10; xent: 0.10; lr: 0.00050; 4158/4968 tok/s;   5054 sec
+[2020-12-09 14:21:18,086 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:21:27,696 INFO] Step 40900/50000; acc:  99.23; ppl:  1.10; xent: 0.10; lr: 0.00050; 4170/4933 tok/s;   5096 sec
+[2020-12-09 14:22:13,220 INFO] Step 41000/50000; acc:  99.16; ppl:  1.10; xent: 0.10; lr: 0.00050; 3880/4620 tok/s;   5141 sec
+[2020-12-09 14:22:53,860 INFO] Step 41100/50000; acc:  99.12; ppl:  1.10; xent: 0.10; lr: 0.00050; 4362/5277 tok/s;   5182 sec
+[2020-12-09 14:23:33,659 INFO] Step 41200/50000; acc:  99.23; ppl:  1.09; xent: 0.08; lr: 0.00050; 4660/5509 tok/s;   5222 sec
+[2020-12-09 14:24:04,292 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:24:13,675 INFO] Step 41300/50000; acc:  99.32; ppl:  1.08; xent: 0.08; lr: 0.00050; 4522/5383 tok/s;   5262 sec
+[2020-12-09 14:24:46,652 INFO] Step 41400/50000; acc:  99.35; ppl:  1.08; xent: 0.08; lr: 0.00050; 5843/6942 tok/s;   5295 sec
+[2020-12-09 14:25:02,155 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:25:22,774 INFO] Step 41500/50000; acc:  99.27; ppl:  1.10; xent: 0.09; lr: 0.00050; 5221/6386 tok/s;   5331 sec
+[2020-12-09 14:26:04,146 INFO] Step 41600/50000; acc:  99.25; ppl:  1.10; xent: 0.10; lr: 0.00050; 4278/5072 tok/s;   5372 sec
+[2020-12-09 14:26:25,303 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:26:50,679 INFO] Step 41700/50000; acc:  99.16; ppl:  1.10; xent: 0.10; lr: 0.00050; 3807/4496 tok/s;   5419 sec
+[2020-12-09 14:27:32,142 INFO] Step 41800/50000; acc:  99.14; ppl:  1.10; xent: 0.10; lr: 0.00050; 4369/5206 tok/s;   5460 sec
+[2020-12-09 14:28:15,157 INFO] Step 41900/50000; acc:  99.17; ppl:  1.09; xent: 0.09; lr: 0.00050; 4048/4799 tok/s;   5503 sec
+[2020-12-09 14:28:56,754 INFO] Step 42000/50000; acc:  99.24; ppl:  1.09; xent: 0.08; lr: 0.00050; 4325/5182 tok/s;   5545 sec
+[2020-12-09 14:29:11,790 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:29:31,232 INFO] Step 42100/50000; acc:  99.30; ppl:  1.08; xent: 0.08; lr: 0.00050; 5341/6433 tok/s;   5579 sec
+[2020-12-09 14:30:04,123 INFO] Step 42200/50000; acc:  99.39; ppl:  1.08; xent: 0.08; lr: 0.00050; 5922/6987 tok/s;   5612 sec
+[2020-12-09 14:30:09,114 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:30:42,904 INFO] Step 42300/50000; acc:  99.25; ppl:  1.10; xent: 0.10; lr: 0.00050; 4763/5706 tok/s;   5651 sec
+[2020-12-09 14:31:26,414 INFO] Step 42400/50000; acc:  99.20; ppl:  1.10; xent: 0.10; lr: 0.00050; 3983/4820 tok/s;   5695 sec
+[2020-12-09 14:31:30,837 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:32:10,132 INFO] Step 42500/50000; acc:  99.15; ppl:  1.10; xent: 0.10; lr: 0.00050; 3933/4674 tok/s;   5738 sec
+[2020-12-09 14:32:51,097 INFO] Step 42600/50000; acc:  99.11; ppl:  1.10; xent: 0.10; lr: 0.00050; 4290/5098 tok/s;   5779 sec
+[2020-12-09 14:33:32,360 INFO] Step 42700/50000; acc:  99.25; ppl:  1.09; xent: 0.08; lr: 0.00050; 4216/4942 tok/s;   5821 sec
+[2020-12-09 14:34:15,061 INFO] Step 42800/50000; acc:  99.20; ppl:  1.09; xent: 0.08; lr: 0.00050; 4320/5143 tok/s;   5863 sec
+[2020-12-09 14:34:20,858 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:34:47,096 INFO] Step 42900/50000; acc:  99.44; ppl:  1.08; xent: 0.08; lr: 0.00050; 6203/7458 tok/s;   5895 sec
+[2020-12-09 14:35:15,661 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:35:21,270 INFO] Step 43000/50000; acc:  99.31; ppl:  1.09; xent: 0.09; lr: 0.00050; 5569/6647 tok/s;   5930 sec
+[2020-12-09 14:36:01,193 INFO] Step 43100/50000; acc:  99.24; ppl:  1.10; xent: 0.10; lr: 0.00050; 4378/5250 tok/s;   5969 sec
+[2020-12-09 14:36:39,259 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:36:45,494 INFO] Step 43200/50000; acc:  99.20; ppl:  1.10; xent: 0.09; lr: 0.00050; 3895/4625 tok/s;   6014 sec
+[2020-12-09 14:37:25,840 INFO] Step 43300/50000; acc:  99.19; ppl:  1.10; xent: 0.09; lr: 0.00050; 4548/5440 tok/s;   6054 sec
+[2020-12-09 14:38:11,371 INFO] Step 43400/50000; acc:  99.10; ppl:  1.10; xent: 0.10; lr: 0.00050; 3856/4599 tok/s;   6100 sec
+[2020-12-09 14:38:53,472 INFO] Step 43500/50000; acc:  99.25; ppl:  1.08; xent: 0.08; lr: 0.00050; 4288/5078 tok/s;   6142 sec
+[2020-12-09 14:39:26,361 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:39:32,846 INFO] Step 43600/50000; acc:  99.24; ppl:  1.08; xent: 0.08; lr: 0.00050; 4734/5626 tok/s;   6181 sec
+[2020-12-09 14:40:03,808 INFO] Step 43700/50000; acc:  99.36; ppl:  1.08; xent: 0.08; lr: 0.00050; 6608/7887 tok/s;   6212 sec
+[2020-12-09 14:40:18,022 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:40:40,324 INFO] Step 43800/50000; acc:  99.30; ppl:  1.10; xent: 0.10; lr: 0.00050; 5335/6336 tok/s;   6249 sec
+[2020-12-09 14:41:24,382 INFO] Step 43900/50000; acc:  99.18; ppl:  1.11; xent: 0.10; lr: 0.00050; 3908/4790 tok/s;   6293 sec
+[2020-12-09 14:41:39,889 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:42:04,991 INFO] Step 44000/50000; acc:  99.18; ppl:  1.10; xent: 0.10; lr: 0.00050; 4227/5029 tok/s;   6333 sec
+[2020-12-09 14:42:04,999 INFO] Saving checkpoint data/models/ta2knrnn_step_44000.pt
+[2020-12-09 14:42:50,434 INFO] Step 44100/50000; acc:  99.13; ppl:  1.10; xent: 0.09; lr: 0.00050; 3952/4657 tok/s;   6379 sec
+[2020-12-09 14:43:31,227 INFO] Step 44200/50000; acc:  99.16; ppl:  1.09; xent: 0.09; lr: 0.00050; 4297/5123 tok/s;   6419 sec
+[2020-12-09 14:44:13,322 INFO] Step 44300/50000; acc:  99.20; ppl:  1.09; xent: 0.08; lr: 0.00050; 4296/5148 tok/s;   6462 sec
+[2020-12-09 14:44:33,376 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:44:50,719 INFO] Step 44400/50000; acc:  99.31; ppl:  1.08; xent: 0.08; lr: 0.00050; 5042/5939 tok/s;   6499 sec
+[2020-12-09 14:45:22,772 INFO] Step 44500/50000; acc:  99.40; ppl:  1.08; xent: 0.08; lr: 0.00050; 6197/7383 tok/s;   6531 sec
+[2020-12-09 14:45:27,582 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:46:06,434 INFO] Step 44600/50000; acc:  99.28; ppl:  1.09; xent: 0.09; lr: 0.00050; 4002/4832 tok/s;   6575 sec
+[2020-12-09 14:46:44,862 INFO] Step 44700/50000; acc:  99.18; ppl:  1.10; xent: 0.09; lr: 0.00050; 4732/5706 tok/s;   6613 sec
+[2020-12-09 14:46:48,283 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:47:29,369 INFO] Step 44800/50000; acc:  99.16; ppl:  1.10; xent: 0.09; lr: 0.00050; 3900/4651 tok/s;   6658 sec
+[2020-12-09 14:48:09,007 INFO] Step 44900/50000; acc:  99.14; ppl:  1.10; xent: 0.09; lr: 0.00050; 4444/5289 tok/s;   6697 sec
+[2020-12-09 14:48:52,672 INFO] Step 45000/50000; acc:  99.27; ppl:  1.09; xent: 0.08; lr: 0.00050; 4021/4739 tok/s;   6741 sec
+[2020-12-09 14:49:32,831 INFO] Step 45100/50000; acc:  99.14; ppl:  1.09; xent: 0.08; lr: 0.00050; 4334/5162 tok/s;   6781 sec
+[2020-12-09 14:49:39,168 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:50:04,524 INFO] Step 45200/50000; acc:  99.39; ppl:  1.08; xent: 0.07; lr: 0.00050; 6349/7535 tok/s;   6813 sec
+[2020-12-09 14:50:33,428 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:50:38,428 INFO] Step 45300/50000; acc:  99.41; ppl:  1.08; xent: 0.08; lr: 0.00050; 5512/6607 tok/s;   6847 sec
+[2020-12-09 14:51:23,463 INFO] Step 45400/50000; acc:  99.26; ppl:  1.10; xent: 0.09; lr: 0.00050; 3912/4654 tok/s;   6892 sec
+[2020-12-09 14:51:53,155 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:52:02,173 INFO] Step 45500/50000; acc:  99.17; ppl:  1.10; xent: 0.09; lr: 0.00050; 4846/5786 tok/s;   6930 sec
+[2020-12-09 14:52:43,517 INFO] Step 45600/50000; acc:  99.15; ppl:  1.10; xent: 0.09; lr: 0.00050; 4375/5255 tok/s;   6972 sec
+[2020-12-09 14:53:25,568 INFO] Step 45700/50000; acc:  99.11; ppl:  1.10; xent: 0.09; lr: 0.00050; 4029/4819 tok/s;   7014 sec
+[2020-12-09 14:54:10,572 INFO] Step 45800/50000; acc:  99.27; ppl:  1.09; xent: 0.08; lr: 0.00050; 3945/4678 tok/s;   7059 sec
+[2020-12-09 14:54:39,953 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:54:47,072 INFO] Step 45900/50000; acc:  99.22; ppl:  1.08; xent: 0.08; lr: 0.00050; 5484/6426 tok/s;   7095 sec
+[2020-12-09 14:55:19,276 INFO] Step 46000/50000; acc:  99.37; ppl:  1.08; xent: 0.08; lr: 0.00050; 6260/7506 tok/s;   7128 sec
+[2020-12-09 14:55:34,386 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:55:56,798 INFO] Step 46100/50000; acc:  99.34; ppl:  1.09; xent: 0.09; lr: 0.00050; 4740/5692 tok/s;   7165 sec
+[2020-12-09 14:56:37,845 INFO] Step 46200/50000; acc:  99.19; ppl:  1.09; xent: 0.09; lr: 0.00050; 4283/5181 tok/s;   7206 sec
+[2020-12-09 14:56:55,852 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 14:57:18,177 INFO] Step 46300/50000; acc:  99.16; ppl:  1.10; xent: 0.09; lr: 0.00050; 4224/5053 tok/s;   7246 sec
+[2020-12-09 14:58:03,922 INFO] Step 46400/50000; acc:  99.18; ppl:  1.09; xent: 0.09; lr: 0.00050; 3763/4435 tok/s;   7292 sec
+[2020-12-09 14:58:42,244 INFO] Step 46500/50000; acc:  99.11; ppl:  1.09; xent: 0.09; lr: 0.00050; 4778/5817 tok/s;   7330 sec
+[2020-12-09 14:59:28,239 INFO] Step 46600/50000; acc:  99.30; ppl:  1.08; xent: 0.08; lr: 0.00050; 3962/4635 tok/s;   7376 sec
+[2020-12-09 14:59:45,537 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 15:00:02,974 INFO] Step 46700/50000; acc:  99.27; ppl:  1.08; xent: 0.08; lr: 0.00050; 5532/6560 tok/s;   7411 sec
+[2020-12-09 15:00:34,847 INFO] Step 46800/50000; acc:  99.38; ppl:  1.08; xent: 0.08; lr: 0.00050; 6279/7467 tok/s;   7443 sec
+[2020-12-09 15:00:39,137 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 15:01:16,271 INFO] Step 46900/50000; acc:  99.26; ppl:  1.10; xent: 0.10; lr: 0.00050; 4160/5002 tok/s;   7485 sec
+[2020-12-09 15:01:54,225 INFO] Step 47000/50000; acc:  99.12; ppl:  1.10; xent: 0.10; lr: 0.00050; 4578/5550 tok/s;   7522 sec
+[2020-12-09 15:02:00,010 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 15:02:39,411 INFO] Step 47100/50000; acc:  99.19; ppl:  1.10; xent: 0.09; lr: 0.00050; 3707/4418 tok/s;   7568 sec
+[2020-12-09 15:03:20,179 INFO] Step 47200/50000; acc:  99.10; ppl:  1.10; xent: 0.09; lr: 0.00050; 4339/5197 tok/s;   7608 sec
+[2020-12-09 15:04:03,072 INFO] Step 47300/50000; acc:  99.22; ppl:  1.09; xent: 0.09; lr: 0.00050; 4050/4738 tok/s;   7651 sec
+[2020-12-09 15:04:44,343 INFO] Step 47400/50000; acc:  99.16; ppl:  1.09; xent: 0.08; lr: 0.00050; 4302/5126 tok/s;   7693 sec
+[2020-12-09 15:04:54,779 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 15:05:16,454 INFO] Step 47500/50000; acc:  99.34; ppl:  1.07; xent: 0.07; lr: 0.00050; 6125/7304 tok/s;   7725 sec
+[2020-12-09 15:05:47,114 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 15:05:49,823 INFO] Step 47600/50000; acc:  99.41; ppl:  1.08; xent: 0.07; lr: 0.00050; 5810/6913 tok/s;   7758 sec
+[2020-12-09 15:06:29,255 INFO] Step 47700/50000; acc:  99.25; ppl:  1.09; xent: 0.09; lr: 0.00050; 4635/5480 tok/s;   7798 sec
+[2020-12-09 15:07:07,290 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 15:07:10,960 INFO] Step 47800/50000; acc:  99.12; ppl:  1.10; xent: 0.10; lr: 0.00050; 4010/4897 tok/s;   7839 sec
+[2020-12-09 15:07:55,651 INFO] Step 47900/50000; acc:  99.18; ppl:  1.10; xent: 0.09; lr: 0.00050; 3983/4804 tok/s;   7884 sec
+[2020-12-09 15:08:36,713 INFO] Step 48000/50000; acc:  99.12; ppl:  1.10; xent: 0.09; lr: 0.00050; 4167/4907 tok/s;   7925 sec
+[2020-12-09 15:08:36,721 INFO] Saving checkpoint data/models/ta2knrnn_step_48000.pt
+[2020-12-09 15:09:23,891 INFO] Step 48100/50000; acc:  99.22; ppl:  1.09; xent: 0.09; lr: 0.00050; 3847/4548 tok/s;   7972 sec
+[2020-12-09 15:10:01,442 INFO] Step 48200/50000; acc:  99.17; ppl:  1.09; xent: 0.08; lr: 0.00050; 4663/5546 tok/s;   8010 sec
+[2020-12-09 15:10:01,476 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 15:10:33,168 INFO] Step 48300/50000; acc:  99.43; ppl:  1.07; xent: 0.07; lr: 0.00050; 6437/7728 tok/s;   8041 sec
+[2020-12-09 15:10:53,032 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 15:11:05,864 INFO] Step 48400/50000; acc:  99.32; ppl:  1.08; xent: 0.08; lr: 0.00050; 5706/6772 tok/s;   8074 sec
+[2020-12-09 15:11:45,595 INFO] Step 48500/50000; acc:  99.21; ppl:  1.10; xent: 0.09; lr: 0.00050; 4399/5296 tok/s;   8114 sec
+[2020-12-09 15:12:13,213 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 15:12:33,468 INFO] Step 48600/50000; acc:  98.92; ppl:  1.11; xent: 0.11; lr: 0.00050; 3454/4155 tok/s;   8162 sec
+[2020-12-09 15:13:13,048 INFO] Step 48700/50000; acc:  99.08; ppl:  1.12; xent: 0.11; lr: 0.00050; 4780/5682 tok/s;   8201 sec
+[2020-12-09 15:13:54,043 INFO] Step 48800/50000; acc:  99.17; ppl:  1.10; xent: 0.10; lr: 0.00050; 4201/4968 tok/s;   8242 sec
+[2020-12-09 15:14:37,236 INFO] Step 48900/50000; acc:  99.08; ppl:  1.10; xent: 0.10; lr: 0.00050; 4245/4926 tok/s;   8285 sec
+[2020-12-09 15:15:06,160 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 15:15:14,766 INFO] Step 49000/50000; acc:  99.21; ppl:  1.09; xent: 0.09; lr: 0.00050; 4772/5781 tok/s;   8323 sec
+[2020-12-09 15:15:45,028 INFO] Step 49100/50000; acc:  99.40; ppl:  1.07; xent: 0.07; lr: 0.00050; 6756/8066 tok/s;   8353 sec
+[2020-12-09 15:15:57,008 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 15:16:26,251 INFO] Step 49200/50000; acc:  99.20; ppl:  1.09; xent: 0.09; lr: 0.00050; 4166/5037 tok/s;   8395 sec
+[2020-12-09 15:17:03,573 INFO] Step 49300/50000; acc:  99.19; ppl:  1.10; xent: 0.09; lr: 0.00050; 4815/5805 tok/s;   8432 sec
+[2020-12-09 15:17:17,562 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 15:18:19,738 INFO] Missing transforms field for corpus_0 data, set to default: [].
+[2020-12-09 15:18:19,740 WARNING] Corpus corpus_0's weight should be given. We default it to 1 for you.
+[2020-12-09 15:18:19,740 INFO] Missing transforms field for valid data, set to default: [].
+[2020-12-09 15:18:19,740 INFO] Parsed 2 corpora from -data.
+[2020-12-09 15:18:19,741 INFO] Loading checkpoint from /content/drive/MyDrive/SATHYA-NMT/data/models/ta2knrnn_step_48000.pt
+[2020-12-09 15:18:20,171 INFO] Loading fields from checkpoint...
+[2020-12-09 15:18:20,171 INFO]  * src vocab size = 2149
+[2020-12-09 15:18:20,171 INFO]  * tgt vocab size = 2149
+[2020-12-09 15:18:20,177 INFO] Building model...
+[2020-12-09 15:18:24,577 INFO] NMTModel(
+  (encoder): RNNEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(2149, 1024, padding_idx=1)
+        )
+      )
+    )
+    (rnn): LSTM(1024, 512, dropout=0.3, bidirectional=True)
+  )
+  (decoder): InputFeedRNNDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(2149, 1024, padding_idx=1)
+        )
+      )
+    )
+    (dropout): Dropout(p=0.3, inplace=False)
+    (rnn): StackedLSTM(
+      (dropout): Dropout(p=0.3, inplace=False)
+      (layers): ModuleList(
+        (0): LSTMCell(2048, 1024)
+      )
+    )
+    (attn): GlobalAttention(
+      (linear_in): Linear(in_features=1024, out_features=1024, bias=False)
+      (linear_out): Linear(in_features=2048, out_features=1024, bias=False)
+    )
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=1024, out_features=2149, bias=True)
+    (1): Cast()
+    (2): LogSoftmax(dim=-1)
+  )
+)
+[2020-12-09 15:18:24,578 INFO] encoder: 8500224
+[2020-12-09 15:18:24,578 INFO] decoder: 15738981
+[2020-12-09 15:18:24,579 INFO] * number of parameters: 24239205
+[2020-12-09 15:18:26,302 INFO] Starting training on GPU: [0]
+[2020-12-09 15:18:26,302 INFO] Start training loop and validate every 51000 steps...
+[2020-12-09 15:18:26,303 INFO] corpus_0's transforms: TransformPipe()
+[2020-12-09 15:18:26,304 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 15:18:57,392 INFO] Step 48100/51000; acc:  99.48; ppl:  1.05; xent: 0.05; lr: 0.00050; 6691/7869 tok/s;     31 sec
+[2020-12-09 15:19:14,575 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 15:19:31,862 INFO] Step 48200/51000; acc:  99.36; ppl:  1.07; xent: 0.06; lr: 0.00050; 5228/6256 tok/s;     66 sec
+[2020-12-09 15:20:13,336 INFO] Step 48300/51000; acc:  99.27; ppl:  1.07; xent: 0.07; lr: 0.00050; 4355/5222 tok/s;    107 sec
+[2020-12-09 15:20:37,013 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 15:20:52,426 INFO] Step 48400/51000; acc:  99.23; ppl:  1.08; xent: 0.07; lr: 0.00050; 4522/5417 tok/s;    146 sec
+[2020-12-09 15:21:38,048 INFO] Step 48500/51000; acc:  99.26; ppl:  1.08; xent: 0.08; lr: 0.00050; 3738/4444 tok/s;    192 sec
+[2020-12-09 15:22:04,586 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 15:22:19,909 INFO] Step 48600/51000; acc:  99.29; ppl:  1.08; xent: 0.08; lr: 0.00050; 4413/5262 tok/s;    234 sec
+[2020-12-09 15:23:00,633 INFO] Step 48700/51000; acc:  99.10; ppl:  1.09; xent: 0.08; lr: 0.00050; 4421/5364 tok/s;    274 sec
+[2020-12-09 15:23:41,104 INFO] Step 48800/51000; acc:  99.27; ppl:  1.08; xent: 0.07; lr: 0.00050; 4700/5452 tok/s;    315 sec
+[2020-12-09 15:24:12,269 INFO] Step 48900/51000; acc:  99.42; ppl:  1.07; xent: 0.06; lr: 0.00050; 6423/7658 tok/s;    346 sec
+[2020-12-09 15:24:19,344 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 15:24:49,272 INFO] Step 49000/51000; acc:  99.27; ppl:  1.08; xent: 0.08; lr: 0.00050; 5007/6057 tok/s;    383 sec
+[2020-12-09 15:25:31,991 INFO] Step 49100/51000; acc:  99.22; ppl:  1.09; xent: 0.08; lr: 0.00050; 4200/4990 tok/s;    426 sec
+[2020-12-09 15:25:37,377 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 15:26:09,618 INFO] Step 49200/51000; acc:  99.24; ppl:  1.09; xent: 0.08; lr: 0.00050; 4970/5936 tok/s;    463 sec
+[2020-12-09 15:26:53,989 INFO] Step 49300/51000; acc:  99.24; ppl:  1.09; xent: 0.08; lr: 0.00050; 3867/4636 tok/s;    508 sec
+[2020-12-09 15:27:02,670 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 15:27:34,641 INFO] Step 49400/51000; acc:  99.22; ppl:  1.09; xent: 0.09; lr: 0.00050; 4354/5213 tok/s;    548 sec
+[2020-12-09 15:28:13,693 INFO] Step 49500/51000; acc:  99.09; ppl:  1.09; xent: 0.09; lr: 0.00050; 4436/5265 tok/s;    587 sec
+[2020-12-09 15:28:52,942 INFO] Step 49600/51000; acc:  99.39; ppl:  1.07; xent: 0.07; lr: 0.00050; 4898/5890 tok/s;    627 sec
+[2020-12-09 15:29:19,837 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 15:29:24,830 INFO] Step 49700/51000; acc:  99.42; ppl:  1.07; xent: 0.07; lr: 0.00050; 6273/7328 tok/s;    659 sec
+[2020-12-09 15:30:02,890 INFO] Step 49800/51000; acc:  99.21; ppl:  1.09; xent: 0.09; lr: 0.00050; 4921/5953 tok/s;    697 sec
+[2020-12-09 15:30:37,933 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 15:30:44,672 INFO] Step 49900/51000; acc:  99.19; ppl:  1.09; xent: 0.09; lr: 0.00050; 4204/5004 tok/s;    738 sec
+[2020-12-09 15:31:29,587 INFO] Step 50000/51000; acc:  99.28; ppl:  1.09; xent: 0.09; lr: 0.00025; 3857/4625 tok/s;    783 sec
+[2020-12-09 15:31:29,595 INFO] Saving checkpoint data/models/ta2knrnn_step_50000.pt
+[2020-12-09 15:32:06,961 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 15:32:12,745 INFO] Step 50100/51000; acc:  99.24; ppl:  1.08; xent: 0.08; lr: 0.00025; 4024/4775 tok/s;    826 sec
+[2020-12-09 15:32:53,758 INFO] Step 50200/51000; acc:  99.27; ppl:  1.08; xent: 0.07; lr: 0.00025; 4236/5093 tok/s;    867 sec
+[2020-12-09 15:33:38,562 INFO] Step 50300/51000; acc:  99.22; ppl:  1.07; xent: 0.07; lr: 0.00025; 3892/4623 tok/s;    912 sec
+[2020-12-09 15:34:07,981 INFO] Step 50400/51000; acc:  99.44; ppl:  1.05; xent: 0.05; lr: 0.00025; 7036/8374 tok/s;    942 sec
+[2020-12-09 15:34:24,997 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 15:34:41,142 INFO] Step 50500/51000; acc:  99.40; ppl:  1.06; xent: 0.06; lr: 0.00025; 5464/6487 tok/s;    975 sec
+[2020-12-09 15:35:22,996 INFO] Step 50600/51000; acc:  99.36; ppl:  1.06; xent: 0.06; lr: 0.00025; 4399/5301 tok/s;   1017 sec
+[2020-12-09 15:35:44,586 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 15:36:04,001 INFO] Step 50700/51000; acc:  99.29; ppl:  1.07; xent: 0.07; lr: 0.00025; 4268/5029 tok/s;   1058 sec
+[2020-12-09 15:36:43,220 INFO] Step 50800/51000; acc:  99.31; ppl:  1.07; xent: 0.07; lr: 0.00025; 4544/5447 tok/s;   1097 sec
+[2020-12-09 15:37:11,184 INFO] Loading ParallelCorpus(data/ta-kn/trainspm.ta, data/ta-kn/trainspm.kn, align=None)...
+[2020-12-09 15:37:28,650 INFO] Step 50900/51000; acc:  99.36; ppl:  1.07; xent: 0.06; lr: 0.00025; 3811/4500 tok/s;   1142 sec
+[2020-12-09 15:38:08,035 INFO] Step 51000/51000; acc:  99.16; ppl:  1.07; xent: 0.07; lr: 0.00025; 4589/5609 tok/s;   1182 sec
+[2020-12-09 15:38:08,036 INFO] valid's transforms: TransformPipe()
+[2020-12-09 15:38:08,038 INFO] Loading ParallelCorpus(data/ta-kn/valspm.ta, data/ta-kn/valspm.kn, align=None)...
